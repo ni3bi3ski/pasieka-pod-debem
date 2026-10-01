@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pasieka pod Dębem — Kiczyce</title>
-<meta name="description" content="Pasieka pod Dębem z Kiczyc koło Skoczowa. Miód i produkty pszczele z lokalnej pasieki. Kontakt telefoniczny, odbiór osobisty.">
+<title>Pasieka pod Dębem — Kiczyce | Miód i sklep online</title>
+<meta name="description" content="Pasieka pod Dębem z Kiczyc koło Skoczowa. Sklep internetowy z miodem i produktami pszczelimi. Zamówienie online, odbiór osobisty.">
 <meta property="og:title" content="Pasieka pod Dębem — Kiczyce">
-<meta property="og:description" content="Miód i produkty pszczele z lokalnej pasieki w Kiczycach.">
+<meta property="og:description" content="Miód i produkty pszczele z lokalnej pasieki. Zamów online, odbierz osobiście.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#f6f5f1">
 <script type="application/ld+json">
@@ -35,33 +35,36 @@
  --xs:clamp(.75rem,.7rem + .25vw,.875rem);--sm:clamp(.875rem,.8rem + .35vw,1rem);
  --base:clamp(1rem,.95rem + .25vw,1.125rem);--lg:clamp(1.125rem,1rem + .75vw,1.5rem);
  --xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--x2:clamp(2rem,1.2rem + 2.5vw,3.5rem);--hero:clamp(3rem,.5rem + 7vw,7rem);
- --s2:.5rem;--s3:.75rem;--s4:1rem;--s6:1.5rem;--s8:2rem;--s12:3rem;--s16:4rem;--s24:6rem;
+ --s1:.25rem;--s2:.5rem;--s3:.75rem;--s4:1rem;--s6:1.5rem;--s8:2rem;--s12:3rem;--s16:4rem;--s24:6rem;
  --r-sm:.375rem;--r-md:.5rem;--r-lg:.75rem;
  --display:'Boska',Georgia,serif;--body:'Satoshi','Helvetica Neue',sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;scroll-padding-top:5rem}
 body{min-height:100dvh;line-height:1.6;font-family:var(--body);font-size:var(--base);color:var(--text);background:var(--bg)}
-a,button{transition:color .18s,background .18s,border-color .18s,transform .18s}
-a{color:inherit}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a,button,input,textarea{transition:color .18s,background .18s,border-color .18s,transform .18s}
+a{color:inherit}button,input,textarea{font:inherit;color:inherit}button{background:none;border:0;cursor:pointer}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r-sm)}
 h1,h2,h3{text-wrap:balance;line-height:1.08;font-weight:500}
 p{text-wrap:pretty;max-width:58ch}
 .wrap{max-width:1200px;margin-inline:auto;padding-inline:var(--s6)}
-.skip{position:absolute;left:-999px}.skip:focus{left:var(--s4);top:var(--s4);background:var(--surface);padding:var(--s2) var(--s4);z-index:30}
+.skip{position:absolute;left:-999px}.skip:focus{left:var(--s4);top:var(--s4);background:var(--surface);padding:var(--s2) var(--s4);z-index:60}
 header{position:sticky;top:0;z-index:20;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--divider)}
 .bar{display:flex;align-items:center;justify-content:space-between;min-height:4.25rem;gap:var(--s4)}
-.brand{display:flex;align-items:center;gap:var(--s3);text-decoration:none;font-weight:700;font-size:var(--sm);letter-spacing:.01em}
+.brand{display:flex;align-items:center;gap:var(--s3);text-decoration:none;font-weight:700;font-size:var(--sm)}
 .brand svg{width:34px;height:34px;color:var(--accent)}
 nav{display:flex;align-items:center;gap:var(--s6);font-size:var(--sm)}
 nav a.l{text-decoration:none;color:var(--muted);padding:var(--s3) 0}nav a.l:hover{color:var(--text)}
-.toggle{width:44px;height:44px;display:grid;place-items:center;border-radius:var(--r-md)}
-.toggle:hover{background:var(--offset)}
+.icon-btn{position:relative;width:44px;height:44px;display:grid;place-items:center;border-radius:var(--r-md)}
+.icon-btn:hover{background:var(--offset)}
+.count{position:absolute;top:2px;right:0;min-width:20px;height:20px;border-radius:99px;background:var(--accent);color:var(--on-accent);font-size:var(--xs);font-weight:700;display:grid;place-items:center;padding:0 5px}
+.count[hidden]{display:none}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:48px;padding:0 var(--s6);border-radius:var(--r-md);background:var(--accent);color:var(--on-accent);font-weight:500;font-size:var(--sm);text-decoration:none}
 .btn:hover{background:var(--accent-hover)}.btn:active{transform:translateY(1px)}
 .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--divider)}
 .btn.ghost:hover{background:var(--offset)}
 .btn.sm{min-height:44px;padding:0 var(--s4)}
+.btn[disabled]{opacity:.5;pointer-events:none}
 .eyebrow{font-size:var(--xs);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500}
 .hero{display:grid;gap:var(--s12);align-items:center;padding-block:clamp(var(--s12),8vw,var(--s24))}
 @media(min-width:900px){.hero{grid-template-columns:7fr 5fr;gap:var(--s16)}}
@@ -82,17 +85,44 @@ h2{font-family:var(--display);font-size:var(--x2);letter-spacing:-.015em}
 .facts{display:grid;gap:var(--s6);margin-top:var(--s8);grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .facts dt{font-size:var(--xs);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--s2)}
 .facts dd{font-size:var(--lg);line-height:1.35}
-.offer{background:var(--surface);border-block:1px solid var(--divider)}
-.offer-box{margin-top:var(--s12);border:1px dashed var(--divider);border-radius:var(--r-lg);padding:clamp(var(--s8),6vw,var(--s16));display:grid;gap:var(--s6);justify-items:start;background:var(--bg)}
-.offer-box svg{width:48px;height:48px;color:var(--accent)}
-.offer-box h3{font-family:var(--display);font-size:var(--xl)}
-.offer-box p{color:var(--muted)}
+.shop{background:var(--surface);border-block:1px solid var(--divider)}
+.grid{display:grid;gap:var(--s6);margin-top:var(--s12);grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr))}
+.card{background:var(--bg);border:1px solid var(--divider);border-radius:var(--r-lg);padding:var(--s6);display:flex;flex-direction:column;gap:var(--s3);box-shadow:var(--shadow)}
+.card .jar{width:100%;aspect-ratio:4/3;border-radius:var(--r-md);background:var(--tint);display:grid;place-items:center;color:var(--accent)}
+.card .jar svg{width:56px;height:56px}
+.card h3{font-family:var(--display);font-size:var(--xl)}
+.card p{color:var(--muted);font-size:var(--sm)}
+.card .row{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);margin-top:auto;padding-top:var(--s3)}
+.price{font-weight:700;font-size:var(--lg);font-variant-numeric:tabular-nums}
+.price.ask{font-size:var(--sm);font-weight:500;color:var(--muted)}
+.note{margin-top:var(--s8);font-size:var(--sm);color:var(--muted);max-width:70ch}
 .contact-card{background:var(--surface);border:1px solid var(--divider);border-radius:var(--r-lg);padding:clamp(var(--s6),4vw,var(--s12));box-shadow:var(--shadow)}
-.contact-card .tel{display:inline-block;font-family:var(--display);font-size:var(--x2);text-decoration:none;letter-spacing:-.01em;margin-block:var(--s2) var(--s6)}
+.contact-card .tel{display:inline-block;font-family:var(--display);font-size:var(--x2);text-decoration:none;margin-block:var(--s2) var(--s6)}
 .contact-card .tel:hover{color:var(--accent)}
 .contact-card address{font-style:normal;font-size:var(--lg);margin-bottom:var(--s6);line-height:1.4}
 footer{padding-block:var(--s12);border-top:1px solid var(--divider);font-size:var(--sm);color:var(--muted)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s4)}
+/* koszyk */
+.scrim{position:fixed;inset:0;background:oklch(0 0 0/.45);opacity:0;pointer-events:none;transition:opacity .3s;z-index:40}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100dvh;width:min(440px,100%);background:var(--bg);border-left:1px solid var(--divider);z-index:50;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);visibility:hidden}
+.drawer.open{transform:none;visibility:visible}
+.drawer header{position:static;display:flex;align-items:center;justify-content:space-between;padding:var(--s4) var(--s6);background:none;backdrop-filter:none}
+.drawer h2{font-size:var(--xl)}
+.items{flex:1;overflow:auto;padding:var(--s4) var(--s6);display:flex;flex-direction:column;gap:var(--s4)}
+.empty{text-align:center;color:var(--muted);padding:var(--s12) var(--s4);display:grid;gap:var(--s3);justify-items:center}
+.empty svg{width:48px;height:48px;color:var(--accent)}
+.line{display:grid;grid-template-columns:1fr auto;gap:var(--s2) var(--s4);padding-bottom:var(--s4);border-bottom:1px solid var(--divider)}
+.line b{font-weight:500}.line small{color:var(--muted);font-size:var(--xs)}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--divider);border-radius:var(--r-md)}
+.qty button{width:44px;height:44px;font-size:var(--lg)}.qty button:hover{background:var(--offset)}
+.qty span{min-width:28px;text-align:center;font-variant-numeric:tabular-nums}
+.foot{padding:var(--s6);border-top:1px solid var(--divider);display:grid;gap:var(--s3);background:var(--surface)}
+.total{display:flex;justify-content:space-between;font-weight:700;font-size:var(--lg)}
+.field{display:grid;gap:var(--s2);font-size:var(--sm)}
+.field input,.field textarea{min-height:44px;padding:var(--s2) var(--s3);border:1px solid var(--divider);border-radius:var(--r-md);background:var(--bg)}
+.field textarea{resize:vertical;min-height:72px}
+.msg{font-size:var(--sm);color:var(--muted)}
 .rv{opacity:0;transition:opacity .7s cubic-bezier(.16,1,.3,1)}.rv.in{opacity:1}
 @media(max-width:640px){nav a.l{display:none}}
 @media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;scroll-behavior:auto!important}.rv{opacity:1}}
@@ -108,10 +138,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(-
   </a>
   <nav aria-label="Główna nawigacja">
    <a class="l" href="#o-nas">O pasiece</a>
-   <a class="l" href="#oferta">Oferta</a>
+   <a class="l" href="#sklep">Sklep</a>
    <a class="l" href="#kontakt">Kontakt</a>
-   <a class="btn sm" href="tel:+48665381292">Zadzwoń</a>
-   <button class="toggle" data-theme-toggle aria-label="Przełącz motyw jasny/ciemny"></button>
+   <button class="icon-btn" data-theme-toggle aria-label="Przełącz motyw jasny/ciemny"></button>
+   <button class="icon-btn" id="open-cart" aria-label="Otwórz koszyk">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+    <span class="count" id="count" hidden>0</span>
+   </button>
   </nav>
  </div>
 </header>
@@ -121,9 +154,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(-
   <div>
    <p class="eyebrow">Kiczyce · powiat cieszyński</p>
    <h1>Miód prosto z&nbsp;<em>Kiczyc.</em></h1>
-   <p class="lead">Lokalna pasieka. Miód i produkty pszczele, kupisz po kontakcie telefonicznym.</p>
+   <p class="lead">Lokalna pasieka. Wybierz produkty w sklepie, wyślij zamówienie, a my potwierdzimy termin odbioru osobistego.</p>
    <div class="cta">
-    <a class="btn" href="#oferta">Zobacz ofertę</a>
+    <a class="btn" href="#sklep">Przejdź do sklepu</a>
     <a class="btn ghost" href="#kontakt">Jak do nas trafić</a>
    </div>
   </div>
@@ -149,25 +182,22 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(-
    <div><p class="eyebrow">O pasiece</p></div>
    <div>
     <h2>Mała pasieka, lokalny miód.</h2>
-    <p class="lead" style="margin-top:var(--s6);color:var(--muted)">Pasieka pod Dębem działa w Kiczycach w gminie Skoczów. Szukasz miodu od lokalnego pszczelarza, zadzwoń i zapytaj o aktualnie dostępne produkty.</p>
+    <p class="lead" style="margin-top:var(--s6);color:var(--muted)">Pasieka pod Dębem działa w Kiczycach w gminie Skoczów. Szukasz miodu od lokalnego pszczelarza? Zamów online lub zadzwoń i zapytaj o aktualnie dostępne produkty.</p>
     <dl class="facts">
      <div><dt>Miejscowość</dt><dd>Kiczyce, 43-430</dd></div>
      <div><dt>Adres</dt><dd>ul. Ochabska 92</dd></div>
+     <div><dt>Odbiór</dt><dd>Osobisty, po potwierdzeniu zamówienia</dd></div>
     </dl>
    </div>
   </div>
  </section>
 
- <section class="offer" id="oferta">
+ <section class="shop" id="sklep">
   <div class="wrap rv">
-   <p class="eyebrow">Oferta</p>
+   <p class="eyebrow">Sklep</p>
    <h2 style="margin-top:var(--s4)">Produkty z pasieki.</h2>
-   <div class="offer-box">
-    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M16 2.5l11.3 6.5v13L16 28.5 4.7 22V9z"/><path d="M10 16h12M16 10v12"/></svg>
-    <h3>Pełna oferta wkrótce online</h3>
-    <p>Aktualne produkty, ceny i dostępność uzgodnisz telefonicznie. Odbiór osobisty w Kiczycach.</p>
-    <a class="btn" href="tel:+48665381292">Zapytaj o ofertę</a>
-   </div>
+   <div class="grid" id="grid"></div>
+   <p class="note">Zamówienie nie jest płatnością online. Po wysłaniu zamówienia potwierdzimy dostępność, cenę końcową i termin odbioru osobistego w Kiczycach.</p>
   </div>
  </section>
 
@@ -189,10 +219,76 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(-
 
 <footer><div class="wrap"><span>© Pasieka pod Dębem, Kiczyce</span><span>ul. Ochabska 92, 43-430 Kiczyce</span></div></footer>
 
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+ <header>
+  <h2 id="cart-title">Twoje zamówienie</h2>
+  <button class="icon-btn" id="close-cart" aria-label="Zamknij koszyk"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+ </header>
+ <div class="items" id="items"></div>
+ <form class="foot" id="order" novalidate>
+  <div class="total"><span>Razem</span><span id="total">—</span></div>
+  <label class="field">Imię i nazwisko<input id="f-name" autocomplete="name" required></label>
+  <label class="field">Telefon<input id="f-tel" type="tel" autocomplete="tel" required></label>
+  <label class="field">Uwagi (opcjonalnie)<textarea id="f-note"></textarea></label>
+  <p class="msg" id="msg" role="status"></p>
+  <button class="btn" type="submit" id="send">Wyślij zamówienie SMS-em</button>
+  <button class="btn ghost" type="button" id="copy">Skopiuj treść zamówienia</button>
+ </form>
+</aside>
+
 <script>
+/* KATALOG — edytuj tutaj. price: kwota w zł albo null (wtedy "Zapytaj o cenę"). */
+var PRODUCTS=[
+ {id:'wielokwiatowy',name:'Miód wielokwiatowy',desc:'Słoik 400 g.',price:null},
+ {id:'lipowy',name:'Miód lipowy',desc:'Słoik 400 g.',price:null},
+ {id:'rzepakowy',name:'Miód rzepakowy',desc:'Słoik 400 g.',price:null},
+ {id:'spadziowy',name:'Miód spadziowy',desc:'Słoik 400 g.',price:null}
+];
+var PHONE='+48665381292';
 (function(){
- var t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;
- var d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+ var cart={},$=function(s){return document.querySelector(s)};
+ var jar='<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M16 2.5l11.3 6.5v13L16 28.5 4.7 22V9z"/><path d="M10 16h12M16 10v12"/></svg>';
+ var fmt=function(n){return n.toFixed(2).replace('.',',')+' zł'};
+ var priceTxt=function(p){return p.price==null?'Zapytaj o cenę':fmt(p.price)};
+ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+ $('#grid').innerHTML=PRODUCTS.map(function(p){return '<article class="card"><div class="jar">'+jar+'</div><h3>'+esc(p.name)+'</h3><p>'+esc(p.desc)+'</p><div class="row"><span class="price'+(p.price==null?' ask':'')+'">'+priceTxt(p)+'</span><button class="btn sm" data-add="'+p.id+'">Dodaj</button></div></article>'}).join('');
+ function find(id){return PRODUCTS.filter(function(p){return p.id===id})[0]}
+ function summary(){
+  var t=0,ask=false,lines=Object.keys(cart).map(function(id){var p=find(id),q=cart[id];if(p.price==null)ask=true;else t+=p.price*q;return q+' x '+p.name});
+  return {lines:lines,total:t,ask:ask};
+ }
+ function render(){
+  var ids=Object.keys(cart),n=ids.reduce(function(a,i){return a+cart[i]},0),c=$('#count');
+  c.textContent=n;c.hidden=!n;
+  var s=summary();
+  $('#items').innerHTML=ids.length?ids.map(function(id){var p=find(id);return '<div class="line"><div><b>'+esc(p.name)+'</b><br><small>'+priceTxt(p)+'</small></div><div class="qty"><button data-dec="'+id+'" aria-label="Mniej">−</button><span>'+cart[id]+'</span><button data-inc="'+id+'" aria-label="Więcej">+</button></div></div>'}).join(''):'<div class="empty">'+jar+'<b>Koszyk jest pusty</b><span>Dodaj produkty ze sklepu.</span></div>';
+  $('#total').textContent=!ids.length?'—':(s.ask?(s.total?fmt(s.total)+' + do wyceny':'do wyceny'):fmt(s.total));
+  $('#send').disabled=!ids.length;$('#copy').disabled=!ids.length;
+ }
+ function text(){
+  var s=summary();
+  return 'Zamówienie — Pasieka pod Dębem\n'+s.lines.join('\n')+'\nImię: '+$('#f-name').value.trim()+'\nTelefon: '+$('#f-tel').value.trim()+($('#f-note').value.trim()?'\nUwagi: '+$('#f-note').value.trim():'');
+ }
+ function valid(){
+  var ok=$('#f-name').value.trim()&&$('#f-tel').value.trim();
+  $('#msg').textContent=ok?'':'Podaj imię i numer telefonu, abyśmy mogli potwierdzić zamówienie.';
+  return !!ok;
+ }
+ function open(o){$('#drawer').classList.toggle('open',o);$('#scrim').classList.toggle('open',o);if(o)$('#close-cart').focus()}
+ document.addEventListener('click',function(e){
+  var a=e.target.closest('[data-add],[data-inc],[data-dec]');if(!a)return;
+  var id=a.dataset.add||a.dataset.inc||a.dataset.dec;
+  if(a.dataset.dec){cart[id]--;if(cart[id]<1)delete cart[id]}else{cart[id]=(cart[id]||0)+1}
+  render();if(a.dataset.add)open(true);
+ });
+ $('#open-cart').onclick=function(){open(true)};$('#close-cart').onclick=function(){open(false)};$('#scrim').onclick=function(){open(false)};
+ document.addEventListener('keydown',function(e){if(e.key==='Escape')open(false)});
+ $('#order').addEventListener('submit',function(e){e.preventDefault();if(!valid())return;location.href='sms:'+PHONE+'?&body='+encodeURIComponent(text());$('#msg').textContent='Otwieramy wiadomość SMS. Jeśli się nie otworzyła, skopiuj treść zamówienia lub zadzwoń: 665 381 292.'});
+ $('#copy').onclick=function(){if(!valid())return;var t=text();(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){$('#msg').textContent='Skopiowano. Wyślij nam treść wiadomością lub zadzwoń: 665 381 292.'},function(){$('#msg').textContent='Nie udało się skopiować. Zadzwoń: 665 381 292.'})};
+ render();
+ /* motyw + animacje */
+ var t=$('[data-theme-toggle]'),r=document.documentElement,d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
  var sun='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
  var moon='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
  function set(){r.setAttribute('data-theme',d);t.innerHTML=d==='dark'?sun:moon}
