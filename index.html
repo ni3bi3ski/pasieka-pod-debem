@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pasieka pod Dębem — Kiczyce | Miód i sklep online</title>
-<meta name="description" content="Pasieka pod Dębem z Kiczyc koło Skoczowa. Sklep internetowy z miodem i produktami pszczelimi. Zamówienie online, odbiór osobisty.">
-<meta property="og:title" content="Pasieka pod Dębem — Kiczyce">
-<meta property="og:description" content="Miód i produkty pszczele z lokalnej pasieki. Zamów online, odbierz osobiście.">
+<title>Pasieka pod Dębem — miód z Kiczyc | Sklep online</title>
+<meta name="description" content="Pasieka pod Dębem z Kiczyc koło Skoczowa. Miód wielokwiatowy, lipowy, rzepakowy i spadziowy. Zamów online, odbierz osobiście.">
+<meta property="og:title" content="Pasieka pod Dębem — miód z Kiczyc">
+<meta property="og:description" content="Miód z lokalnej pasieki. Zamów online, odbierz osobiście w Kiczycach.">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
 <meta name="theme-color" content="#f6f5f1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Pasieka pod Dębem","telephone":"+48665381292","address":{"@type":"PostalAddress","streetAddress":"ul. Ochabska 92","postalCode":"43-430","addressLocality":"Kiczyce","addressCountry":"PL"}}
 </script>
 <link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=boska@400,500&display=swap" rel="stylesheet">
 <style>
-/* Art direction: nowoczesny minimalizm, szlachetna oszczędność.
-   Paleta: ciepłe neutralne, jeden akcent — bursztyn miodu.
-   Typografia: Boska (display, 24px+) + Satoshi (tekst).
-   Gęstość: przestronna, siatka edytorska. */
+/* Art direction: nowoczesny minimalizm, ciepłe neutralne, jeden akcent — bursztyn miodu.
+   Typografia: Boska (display, 24px+) + Satoshi (tekst). Gęstość: przestronna, siatka edytorska. */
 :root,[data-theme="light"]{
  --bg:#f6f5f1;--surface:#fbfaf7;--offset:#eeece6;--divider:#dcd9d1;
  --text:#1d1c18;--muted:#5f5d56;
@@ -42,14 +42,14 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;scroll-padding-top:5rem}
 body{min-height:100dvh;line-height:1.6;font-family:var(--body);font-size:var(--base);color:var(--text);background:var(--bg)}
-a,button,input,textarea{transition:color .18s,background .18s,border-color .18s,transform .18s}
+a,button,input,textarea,summary{transition:color .18s,background .18s,border-color .18s,transform .18s}
 a{color:inherit}button,input,textarea{font:inherit;color:inherit}button{background:none;border:0;cursor:pointer}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r-sm)}
 h1,h2,h3{text-wrap:balance;line-height:1.08;font-weight:500}
 p{text-wrap:pretty;max-width:58ch}
 .wrap{max-width:1200px;margin-inline:auto;padding-inline:var(--s6)}
 .skip{position:absolute;left:-999px}.skip:focus{left:var(--s4);top:var(--s4);background:var(--surface);padding:var(--s2) var(--s4);z-index:60}
-header{position:sticky;top:0;z-index:20;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--divider)}
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--divider)}
 .bar{display:flex;align-items:center;justify-content:space-between;min-height:4.25rem;gap:var(--s4)}
 .brand{display:flex;align-items:center;gap:var(--s3);text-decoration:none;font-weight:700;font-size:var(--sm)}
 .brand svg{width:34px;height:34px;color:var(--accent)}
@@ -75,8 +75,8 @@ nav a.l{text-decoration:none;color:var(--muted);padding:var(--s3) 0}nav a.l:hove
 .art{aspect-ratio:1/1.05;max-width:460px;width:100%;justify-self:center}
 .art svg{width:100%;height:100%;display:block}
 .hexes polygon{stroke:var(--accent);stroke-width:1.5;fill:none;opacity:.55}
-.hexes polygon.f{fill:var(--tint);opacity:1;stroke:var(--accent)}
-.hexes .oak{stroke:var(--accent);stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:1}
+.hexes polygon.f{fill:var(--tint);opacity:1}
+.hexes .oak{stroke:var(--accent);stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
 section{padding-block:clamp(var(--s12),8vw,var(--s24))}
 h2{font-family:var(--display);font-size:var(--x2);letter-spacing:-.015em}
 .lead{font-size:var(--lg)}
@@ -85,29 +85,42 @@ h2{font-family:var(--display);font-size:var(--x2);letter-spacing:-.015em}
 .facts{display:grid;gap:var(--s6);margin-top:var(--s8);grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .facts dt{font-size:var(--xs);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--s2)}
 .facts dd{font-size:var(--lg);line-height:1.35}
-.shop{background:var(--surface);border-block:1px solid var(--divider)}
+.alt{background:var(--surface);border-block:1px solid var(--divider)}
+.steps{list-style:none;display:grid;gap:var(--s8);margin-top:var(--s12);counter-reset:s}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr);gap:var(--s12)}}
+.steps li{counter-increment:s;padding-top:var(--s4);border-top:1px solid var(--divider)}
+.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--display);font-size:var(--xl);color:var(--accent);display:block;margin-bottom:var(--s2)}
+.steps b{display:block;font-weight:700;margin-bottom:var(--s2)}
+.steps span{color:var(--muted);font-size:var(--sm)}
 .grid{display:grid;gap:var(--s6);margin-top:var(--s12);grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr))}
 .card{background:var(--bg);border:1px solid var(--divider);border-radius:var(--r-lg);padding:var(--s6);display:flex;flex-direction:column;gap:var(--s3);box-shadow:var(--shadow)}
-.card .jar{width:100%;aspect-ratio:4/3;border-radius:var(--r-md);background:var(--tint);display:grid;place-items:center;color:var(--accent)}
-.card .jar svg{width:56px;height:56px}
+.card .jar{width:100%;aspect-ratio:4/3;border-radius:var(--r-md);background:var(--tint);display:grid;place-items:center}
+.card .jar svg{width:96px;height:96px}
 .card h3{font-family:var(--display);font-size:var(--xl)}
 .card p{color:var(--muted);font-size:var(--sm)}
 .card .row{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);margin-top:auto;padding-top:var(--s3)}
 .price{font-weight:700;font-size:var(--lg);font-variant-numeric:tabular-nums}
 .price.ask{font-size:var(--sm);font-weight:500;color:var(--muted)}
 .note{margin-top:var(--s8);font-size:var(--sm);color:var(--muted);max-width:70ch}
+.faq{margin-top:var(--s8);max-width:780px}
+.faq details{border-top:1px solid var(--divider)}.faq details:last-child{border-bottom:1px solid var(--divider)}
+.faq summary{cursor:pointer;list-style:none;padding:var(--s4) 0;min-height:44px;font-weight:500;font-size:var(--lg);display:flex;justify-content:space-between;gap:var(--s4)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';color:var(--accent);font-size:var(--xl);line-height:1}
+.faq details[open] summary::after{content:'−'}
+.faq summary:hover{color:var(--accent)}
+.faq p{padding-bottom:var(--s6);color:var(--muted)}
 .contact-card{background:var(--surface);border:1px solid var(--divider);border-radius:var(--r-lg);padding:clamp(var(--s6),4vw,var(--s12));box-shadow:var(--shadow)}
 .contact-card .tel{display:inline-block;font-family:var(--display);font-size:var(--x2);text-decoration:none;margin-block:var(--s2) var(--s6)}
 .contact-card .tel:hover{color:var(--accent)}
 .contact-card address{font-style:normal;font-size:var(--lg);margin-bottom:var(--s6);line-height:1.4}
-footer{padding-block:var(--s12);border-top:1px solid var(--divider);font-size:var(--sm);color:var(--muted)}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s4)}
-/* koszyk */
+footer.site{padding-block:var(--s12);border-top:1px solid var(--divider);font-size:var(--sm);color:var(--muted)}
+footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s4)}
 .scrim{position:fixed;inset:0;background:oklch(0 0 0/.45);opacity:0;pointer-events:none;transition:opacity .3s;z-index:40}
 .scrim.open{opacity:1;pointer-events:auto}
-.drawer{position:fixed;top:0;right:0;height:100dvh;width:min(440px,100%);background:var(--bg);border-left:1px solid var(--divider);z-index:50;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);visibility:hidden}
+.drawer{position:fixed;top:0;right:0;height:100dvh;width:min(440px,100%);background:var(--bg);border-left:1px solid var(--divider);z-index:50;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1),visibility .35s;visibility:hidden}
 .drawer.open{transform:none;visibility:visible}
-.drawer header{position:static;display:flex;align-items:center;justify-content:space-between;padding:var(--s4) var(--s6);background:none;backdrop-filter:none}
+.dh{display:flex;align-items:center;justify-content:space-between;padding:var(--s4) var(--s6)}
 .drawer h2{font-size:var(--xl)}
 .items{flex:1;overflow:auto;padding:var(--s4) var(--s6);display:flex;flex-direction:column;gap:var(--s4)}
 .empty{text-align:center;color:var(--muted);padding:var(--s12) var(--s4);display:grid;gap:var(--s3);justify-items:center}
@@ -121,8 +134,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(-
 .total{display:flex;justify-content:space-between;font-weight:700;font-size:var(--lg)}
 .field{display:grid;gap:var(--s2);font-size:var(--sm)}
 .field input,.field textarea{min-height:44px;padding:var(--s2) var(--s3);border:1px solid var(--divider);border-radius:var(--r-md);background:var(--bg)}
+.field input[aria-invalid=true]{border-color:#a12c7b}
 .field textarea{resize:vertical;min-height:72px}
-.msg{font-size:var(--sm);color:var(--muted)}
+.msg{font-size:var(--sm);color:var(--muted);min-height:1.5em}
 .rv{opacity:0;transition:opacity .7s cubic-bezier(.16,1,.3,1)}.rv.in{opacity:1}
 @media(max-width:640px){nav a.l{display:none}}
 @media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;scroll-behavior:auto!important}.rv{opacity:1}}
@@ -130,7 +144,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(-
 </head>
 <body>
 <a class="skip" href="#main">Przejdź do treści</a>
-<header>
+<header class="top" id="site-top">
  <div class="wrap bar">
   <a class="brand" href="#top" aria-label="Pasieka pod Dębem — początek strony">
    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M16 2.5l11.3 6.5v13L16 28.5 4.7 22V9z"/><path d="M16 22v-9M16 16l-4-3M16 18l4-3"/></svg>
@@ -139,8 +153,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(-
   <nav aria-label="Główna nawigacja">
    <a class="l" href="#o-nas">O pasiece</a>
    <a class="l" href="#sklep">Sklep</a>
+   <a class="l" href="#faq">Pytania</a>
    <a class="l" href="#kontakt">Kontakt</a>
-   <button class="icon-btn" data-theme-toggle aria-label="Przełącz motyw jasny/ciemny"></button>
+   <button class="icon-btn" data-theme-toggle aria-label="Przełącz motyw jasny lub ciemny"></button>
    <button class="icon-btn" id="open-cart" aria-label="Otwórz koszyk">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
     <span class="count" id="count" hidden>0</span>
@@ -154,7 +169,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(-
   <div>
    <p class="eyebrow">Kiczyce · powiat cieszyński</p>
    <h1>Miód prosto z&nbsp;<em>Kiczyc.</em></h1>
-   <p class="lead">Lokalna pasieka. Wybierz produkty w sklepie, wyślij zamówienie, a my potwierdzimy termin odbioru osobistego.</p>
+   <p class="lead">Lokalna pasieka. Wybierz miód w sklepie, wyślij zamówienie, a my potwierdzimy dostępność i termin odbioru osobistego.</p>
    <div class="cta">
     <a class="btn" href="#sklep">Przejdź do sklepu</a>
     <a class="btn ghost" href="#kontakt">Jak do nas trafić</a>
@@ -192,12 +207,40 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(-
   </div>
  </section>
 
- <section class="shop" id="sklep">
+ <section class="alt" id="jak-zamowic">
+  <div class="wrap rv">
+   <p class="eyebrow">Jak zamówić</p>
+   <h2 style="margin-top:var(--s4)">Trzy kroki do słoika.</h2>
+   <ol class="steps">
+    <li><b>Wybierz miód</b><span>Dodaj do koszyka produkty ze sklepu poniżej.</span></li>
+    <li><b>Wyślij zamówienie</b><span>Podaj imię i telefon. Zamówienie wyślesz SMS-em jednym kliknięciem.</span></li>
+    <li><b>Odbierz osobiście</b><span>Potwierdzimy dostępność, cenę i termin odbioru w Kiczycach.</span></li>
+   </ol>
+  </div>
+ </section>
+
+ <section id="sklep">
   <div class="wrap rv">
    <p class="eyebrow">Sklep</p>
-   <h2 style="margin-top:var(--s4)">Produkty z pasieki.</h2>
+   <h2 style="margin-top:var(--s4)">Miody z pasieki.</h2>
    <div class="grid" id="grid"></div>
-   <p class="note">Zamówienie nie jest płatnością online. Po wysłaniu zamówienia potwierdzimy dostępność, cenę końcową i termin odbioru osobistego w Kiczycach.</p>
+   <p class="note">Zamówienie nie jest płatnością online. Po wysłaniu zamówienia potwierdzimy dostępność, cenę końcową i termin odbioru osobistego.</p>
+  </div>
+ </section>
+
+ <section class="alt" id="faq">
+  <div class="wrap split rv">
+   <div><p class="eyebrow">Pytania</p></div>
+   <div>
+    <h2>Dobrze wiedzieć o miodzie.</h2>
+    <div class="faq">
+     <details><summary>Czym różnią się rodzaje miodu?</summary><p>Wielokwiatowy powstaje z nektaru wielu roślin, lipowy ma wyraźny, świeży aromat, rzepakowy jest jasny i łagodny, a spadziowy ciemniejszy i mniej słodki, bo pochodzi ze spadzi, a nie z nektaru kwiatów.</p></details>
+     <details><summary>Dlaczego miód stał się gęsty lub jasny?</summary><p>To krystalizacja, naturalny proces, który nie oznacza, że miód się zepsuł. Szybciej zachodzi na przykład w miodzie rzepakowym. Słoik można delikatnie podgrzać w ciepłej wodzie, nie gorącej.</p></details>
+     <details><summary>Jak przechowywać miód?</summary><p>W szczelnie zamkniętym słoiku, w suchym i chłodnym miejscu, z dala od światła i silnych zapachów.</p></details>
+     <details><summary>Czy miód mogą jeść małe dzieci?</summary><p>Nie podaje się go dzieciom poniżej 12. miesiąca życia. U starszych dzieci i dorosłych wprowadzaj go zgodnie z zaleceniami lekarza, jeśli występują alergie lub choroby.</p></details>
+     <details><summary>Czy można zapłacić online?</summary><p>Na razie nie. Po wysłaniu zamówienia potwierdzamy je telefonicznie lub SMS-em i ustalamy odbiór osobisty.</p></details>
+    </div>
+   </div>
   </div>
  </section>
 
@@ -217,19 +260,19 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(-
  </section>
 </main>
 
-<footer><div class="wrap"><span>© Pasieka pod Dębem, Kiczyce</span><span>ul. Ochabska 92, 43-430 Kiczyce</span></div></footer>
+<footer class="site" id="site-foot"><div class="wrap"><span>© Pasieka pod Dębem, Kiczyce</span><span>ul. Ochabska 92, 43-430 Kiczyce</span></div></footer>
 
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title">
- <header>
+ <div class="dh">
   <h2 id="cart-title">Twoje zamówienie</h2>
   <button class="icon-btn" id="close-cart" aria-label="Zamknij koszyk"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
- </header>
+ </div>
  <div class="items" id="items"></div>
  <form class="foot" id="order" novalidate>
   <div class="total"><span>Razem</span><span id="total">—</span></div>
   <label class="field">Imię i nazwisko<input id="f-name" autocomplete="name" required></label>
-  <label class="field">Telefon<input id="f-tel" type="tel" autocomplete="tel" required></label>
+  <label class="field">Telefon<input id="f-tel" type="tel" inputmode="tel" autocomplete="tel" required></label>
   <label class="field">Uwagi (opcjonalnie)<textarea id="f-note"></textarea></label>
   <p class="msg" id="msg" role="status"></p>
   <button class="btn" type="submit" id="send">Wyślij zamówienie SMS-em</button>
@@ -238,21 +281,22 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(-
 </aside>
 
 <script>
-/* KATALOG — edytuj tutaj. price: kwota w zł albo null (wtedy "Zapytaj o cenę"). */
+/* KATALOG — edytuj tutaj. price: kwota w zł albo null (wtedy "Zapytaj o cenę"). tone: kolor miodu w ilustracji. */
 var PRODUCTS=[
- {id:'wielokwiatowy',name:'Miód wielokwiatowy',desc:'Słoik 400 g.',price:null},
- {id:'lipowy',name:'Miód lipowy',desc:'Słoik 400 g.',price:null},
- {id:'rzepakowy',name:'Miód rzepakowy',desc:'Słoik 400 g.',price:null},
- {id:'spadziowy',name:'Miód spadziowy',desc:'Słoik 400 g.',price:null}
+ {id:'wielokwiatowy',name:'Miód wielokwiatowy',desc:'Słoik 400 g.',price:null,tone:'#d9a032'},
+ {id:'lipowy',name:'Miód lipowy',desc:'Słoik 400 g.',price:null,tone:'#c98a1e'},
+ {id:'rzepakowy',name:'Miód rzepakowy',desc:'Słoik 400 g.',price:null,tone:'#ecd48a'},
+ {id:'spadziowy',name:'Miód spadziowy',desc:'Słoik 400 g.',price:null,tone:'#7a4a14'}
 ];
 var PHONE='+48665381292';
 (function(){
- var cart={},$=function(s){return document.querySelector(s)};
- var jar='<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M16 2.5l11.3 6.5v13L16 28.5 4.7 22V9z"/><path d="M10 16h12M16 10v12"/></svg>';
+ var cart={},lastFocus=null,$=function(s){return document.querySelector(s)};
+ var jarIcon='<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M16 2.5l11.3 6.5v13L16 28.5 4.7 22V9z"/><path d="M10 16h12M16 10v12"/></svg>';
+ function jar(c){return '<svg viewBox="0 0 96 96" aria-hidden="true"><rect x="28" y="10" width="40" height="10" rx="3" fill="#5f5d56"/><path d="M26 22h44v8c6 4 8 10 8 18v28a8 8 0 0 1-8 8H26a8 8 0 0 1-8-8V48c0-8 2-14 8-18z" fill="'+c+'" stroke="#1d1c18" stroke-opacity=".35" stroke-width="2"/><rect x="30" y="46" width="36" height="24" rx="4" fill="#fbfaf7" fill-opacity=".85"/><path d="M48 50l7 4v8l-7 4-7-4v-8z" fill="none" stroke="#8a5a00" stroke-width="2"/></svg>'}
  var fmt=function(n){return n.toFixed(2).replace('.',',')+' zł'};
  var priceTxt=function(p){return p.price==null?'Zapytaj o cenę':fmt(p.price)};
  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
- $('#grid').innerHTML=PRODUCTS.map(function(p){return '<article class="card"><div class="jar">'+jar+'</div><h3>'+esc(p.name)+'</h3><p>'+esc(p.desc)+'</p><div class="row"><span class="price'+(p.price==null?' ask':'')+'">'+priceTxt(p)+'</span><button class="btn sm" data-add="'+p.id+'">Dodaj</button></div></article>'}).join('');
+ $('#grid').innerHTML=PRODUCTS.map(function(p){return '<article class="card"><div class="jar">'+jar(p.tone)+'</div><h3>'+esc(p.name)+'</h3><p>'+esc(p.desc)+'</p><div class="row"><span class="price'+(p.price==null?' ask':'')+'">'+priceTxt(p)+'</span><button class="btn sm" data-add="'+p.id+'" aria-label="Dodaj do koszyka: '+esc(p.name)+'">Dodaj</button></div></article>'}).join('');
  function find(id){return PRODUCTS.filter(function(p){return p.id===id})[0]}
  function summary(){
   var t=0,ask=false,lines=Object.keys(cart).map(function(id){var p=find(id),q=cart[id];if(p.price==null)ask=true;else t+=p.price*q;return q+' x '+p.name});
@@ -260,9 +304,9 @@ var PHONE='+48665381292';
  }
  function render(){
   var ids=Object.keys(cart),n=ids.reduce(function(a,i){return a+cart[i]},0),c=$('#count');
-  c.textContent=n;c.hidden=!n;
+  c.textContent=n;c.hidden=!n;$('#open-cart').setAttribute('aria-label','Otwórz koszyk, produktów: '+n);
   var s=summary();
-  $('#items').innerHTML=ids.length?ids.map(function(id){var p=find(id);return '<div class="line"><div><b>'+esc(p.name)+'</b><br><small>'+priceTxt(p)+'</small></div><div class="qty"><button data-dec="'+id+'" aria-label="Mniej">−</button><span>'+cart[id]+'</span><button data-inc="'+id+'" aria-label="Więcej">+</button></div></div>'}).join(''):'<div class="empty">'+jar+'<b>Koszyk jest pusty</b><span>Dodaj produkty ze sklepu.</span></div>';
+  $('#items').innerHTML=ids.length?ids.map(function(id){var p=find(id);return '<div class="line"><div><b>'+esc(p.name)+'</b><br><small>'+priceTxt(p)+'</small></div><div class="qty"><button data-dec="'+id+'" aria-label="Mniej: '+esc(p.name)+'">−</button><span>'+cart[id]+'</span><button data-inc="'+id+'" aria-label="Więcej: '+esc(p.name)+'">+</button></div></div>'}).join(''):'<div class="empty">'+jarIcon+'<b>Koszyk jest pusty</b><span>Dodaj miód ze sklepu.</span></div>';
   $('#total').textContent=!ids.length?'—':(s.ask?(s.total?fmt(s.total)+' + do wyceny':'do wyceny'):fmt(s.total));
   $('#send').disabled=!ids.length;$('#copy').disabled=!ids.length;
  }
@@ -271,11 +315,21 @@ var PHONE='+48665381292';
   return 'Zamówienie — Pasieka pod Dębem\n'+s.lines.join('\n')+'\nImię: '+$('#f-name').value.trim()+'\nTelefon: '+$('#f-tel').value.trim()+($('#f-note').value.trim()?'\nUwagi: '+$('#f-note').value.trim():'');
  }
  function valid(){
-  var ok=$('#f-name').value.trim()&&$('#f-tel').value.trim();
-  $('#msg').textContent=ok?'':'Podaj imię i numer telefonu, abyśmy mogli potwierdzić zamówienie.';
-  return !!ok;
+  var n=$('#f-name'),t=$('#f-tel'),nok=n.value.trim().length>1,tok=t.value.replace(/\D/g,'').length>=9;
+  n.setAttribute('aria-invalid',!nok);t.setAttribute('aria-invalid',!tok);
+  $('#msg').textContent=(nok&&tok)?'':(!nok?'Podaj imię i nazwisko.':'Podaj poprawny numer telefonu (min. 9 cyfr).');
+  if(!nok)n.focus();else if(!tok)t.focus();
+  return nok&&tok;
  }
- function open(o){$('#drawer').classList.toggle('open',o);$('#scrim').classList.toggle('open',o);if(o)$('#close-cart').focus()}
+ var bg=['#main','#site-top','#site-foot'];
+ function open(o){
+  var d=$('#drawer');
+  if(o){lastFocus=document.activeElement}
+  d.classList.toggle('open',o);$('#scrim').classList.toggle('open',o);
+  bg.forEach(function(s){var e=$(s);if(o)e.setAttribute('inert','');else e.removeAttribute('inert')});
+  document.body.style.overflow=o?'hidden':'';
+  if(o)$('#close-cart').focus();else if(lastFocus&&lastFocus.focus)lastFocus.focus();
+ }
  document.addEventListener('click',function(e){
   var a=e.target.closest('[data-add],[data-inc],[data-dec]');if(!a)return;
   var id=a.dataset.add||a.dataset.inc||a.dataset.dec;
@@ -283,11 +337,14 @@ var PHONE='+48665381292';
   render();if(a.dataset.add)open(true);
  });
  $('#open-cart').onclick=function(){open(true)};$('#close-cart').onclick=function(){open(false)};$('#scrim').onclick=function(){open(false)};
- document.addEventListener('keydown',function(e){if(e.key==='Escape')open(false)});
+ document.addEventListener('keydown',function(e){
+  var d=$('#drawer');if(!d.classList.contains('open'))return;
+  if(e.key==='Escape'){open(false);return}
+  if(e.key==='Tab'){var f=[].slice.call(d.querySelectorAll('button,input,textarea')).filter(function(x){return !x.disabled});if(!f.length)return;var a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}
+ });
  $('#order').addEventListener('submit',function(e){e.preventDefault();if(!valid())return;location.href='sms:'+PHONE+'?&body='+encodeURIComponent(text());$('#msg').textContent='Otwieramy wiadomość SMS. Jeśli się nie otworzyła, skopiuj treść zamówienia lub zadzwoń: 665 381 292.'});
  $('#copy').onclick=function(){if(!valid())return;var t=text();(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){$('#msg').textContent='Skopiowano. Wyślij nam treść wiadomością lub zadzwoń: 665 381 292.'},function(){$('#msg').textContent='Nie udało się skopiować. Zadzwoń: 665 381 292.'})};
  render();
- /* motyw + animacje */
  var t=$('[data-theme-toggle]'),r=document.documentElement,d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
  var sun='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
  var moon='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
