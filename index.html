@@ -4,154 +4,190 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pasieka pod Dębem — Kiczyce</title>
-<meta name="description" content="Pasieka pod Dębem z Kiczyc. Miód i produkty pszczele.">
+<meta name="description" content="Pasieka pod Dębem z Kiczyc koło Skoczowa. Miód i produkty pszczele z lokalnej pasieki. Kontakt telefoniczny, odbiór osobisty.">
+<meta property="og:title" content="Pasieka pod Dębem — Kiczyce">
+<meta property="og:description" content="Miód i produkty pszczele z lokalnej pasieki w Kiczycach.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f6f5f1">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pasieka pod Dębem","telephone":"+48665381292","address":{"@type":"PostalAddress","streetAddress":"ul. Ochabska 92","postalCode":"43-430","addressLocality":"Kiczyce","addressCountry":"PL"}}
+</script>
+<link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=boska@400,500&display=swap" rel="stylesheet">
 <style>
-/* Art direction: nowoczesny minimalizm; jeden akcent: miodowy bursztyn
-   Typografia: Boska (display) + Satoshi (body); gęstość: przestronna */
+/* Art direction: nowoczesny minimalizm, szlachetna oszczędność.
+   Paleta: ciepłe neutralne, jeden akcent — bursztyn miodu.
+   Typografia: Boska (display, 24px+) + Satoshi (tekst).
+   Gęstość: przestronna, siatka edytorska. */
 :root,[data-theme="light"]{
- --color-bg:#f6f5f1;--color-surface:#fbfaf7;--color-surface-offset:#eeece6;--color-divider:#dcd9d1;
- --color-text:#1d1c18;--color-text-muted:#5f5d56;
- --color-primary:#8a5a00;--color-primary-hover:#6d4700;--color-on-primary:#fff;
+ --bg:#f6f5f1;--surface:#fbfaf7;--offset:#eeece6;--divider:#dcd9d1;
+ --text:#1d1c18;--muted:#5f5d56;
+ --accent:#8a5a00;--accent-hover:#6d4700;--on-accent:#fff;--tint:#e9dcc0;
+ --shadow:0 1px 2px oklch(.2 .01 80/.06),0 8px 24px oklch(.2 .01 80/.06);
 }
 [data-theme="dark"]{
- --color-bg:#14130f;--color-surface:#1b1a15;--color-surface-offset:#232119;--color-divider:#322f25;
- --color-text:#ece9e0;--color-text-muted:#a29f94;
- --color-primary:#e0a53a;--color-primary-hover:#f0bb5a;--color-on-primary:#14130f;
+ --bg:#14130f;--surface:#1b1a15;--offset:#232119;--divider:#322f25;
+ --text:#ece9e0;--muted:#a8a598;
+ --accent:#e0a53a;--accent-hover:#f0bb5a;--on-accent:#14130f;--tint:#3a2f17;
+ --shadow:0 1px 2px oklch(0 0 0/.3),0 8px 24px oklch(0 0 0/.35);
 }
 :root{
- --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);--text-sm:clamp(.875rem,.8rem + .35vw,1rem);
- --text-base:clamp(1rem,.95rem + .25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);
- --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);--text-hero:clamp(3rem,.5rem + 7vw,7rem);
- --space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-6:1.5rem;--space-8:2rem;--space-12:3rem;--space-16:4rem;--space-24:6rem;
- --radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;
- --font-display:'Boska',Georgia,serif;--font-body:'Satoshi','Helvetica Neue',sans-serif;
+ --xs:clamp(.75rem,.7rem + .25vw,.875rem);--sm:clamp(.875rem,.8rem + .35vw,1rem);
+ --base:clamp(1rem,.95rem + .25vw,1.125rem);--lg:clamp(1.125rem,1rem + .75vw,1.5rem);
+ --xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--x2:clamp(2rem,1.2rem + 2.5vw,3.5rem);--hero:clamp(3rem,.5rem + 7vw,7rem);
+ --s2:.5rem;--s3:.75rem;--s4:1rem;--s6:1.5rem;--s8:2rem;--s12:3rem;--s16:4rem;--s24:6rem;
+ --r-sm:.375rem;--r-md:.5rem;--r-lg:.75rem;
+ --display:'Boska',Georgia,serif;--body:'Satoshi','Helvetica Neue',sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;scroll-padding-top:5rem}
-body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg)}
-a,button{transition:color .18s,background .18s,border-color .18s}
+body{min-height:100dvh;line-height:1.6;font-family:var(--body);font-size:var(--base);color:var(--text);background:var(--bg)}
+a,button{transition:color .18s,background .18s,border-color .18s,transform .18s}
 a{color:inherit}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-:focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
-h1,h2,h3{text-wrap:balance;line-height:1.1;font-weight:500}
-p{text-wrap:pretty;max-width:60ch}
-.wrap{max-width:1200px;margin-inline:auto;padding-inline:var(--space-6)}
-.skip{position:absolute;left:-999px}.skip:focus{left:var(--space-4);top:var(--space-4);background:var(--color-surface);padding:var(--space-2) var(--space-4);z-index:20}
-header{position:sticky;top:0;z-index:10;background:color-mix(in oklab,var(--color-bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--color-divider)}
-.bar{display:flex;align-items:center;justify-content:space-between;min-height:4rem;gap:var(--space-4)}
-.brand{display:flex;align-items:center;gap:var(--space-3);text-decoration:none;font-weight:700;font-size:var(--text-sm)}
-.brand svg{width:32px;height:32px;color:var(--color-primary)}
-nav{display:flex;align-items:center;gap:var(--space-6);font-size:var(--text-sm)}
-nav a{text-decoration:none;color:var(--color-text-muted);padding:var(--space-3) 0}nav a:hover{color:var(--color-text)}
-.toggle{width:44px;height:44px;display:grid;place-items:center;border-radius:var(--radius-md)}
-.toggle:hover{background:var(--color-surface-offset)}
-.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 var(--space-6);border-radius:var(--radius-md);background:var(--color-primary);color:var(--color-on-primary);font-weight:500;font-size:var(--text-sm);text-decoration:none}
-.btn:hover{background:var(--color-primary-hover)}
-.btn-ghost{background:transparent;color:var(--color-text);border:1px solid var(--color-divider)}
-.btn-ghost:hover{background:var(--color-surface-offset)}
-.hero{padding-block:clamp(var(--space-12),10vw,var(--space-24)) clamp(var(--space-12),8vw,var(--space-16))}
-.eyebrow{font-size:var(--text-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:var(--space-6)}
-.hero h1{font-family:var(--font-display);font-size:var(--text-hero);max-width:11ch;letter-spacing:-.02em}
-.hero p{margin-top:var(--space-8);font-size:var(--text-lg);color:var(--color-text-muted)}
-.cta{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-8)}
-.hex{margin-top:clamp(var(--space-12),7vw,var(--space-16));height:clamp(180px,28vw,340px);border-radius:var(--radius-lg);background:var(--color-surface-offset);position:relative;overflow:hidden;border:1px solid var(--color-divider)}
-.hex svg{position:absolute;inset:0;width:100%;height:100%;color:var(--color-primary)}
-section{padding-block:clamp(var(--space-12),8vw,var(--space-24))}
-.split{display:grid;gap:var(--space-8);grid-template-columns:1fr}
-@media(min-width:860px){.split{grid-template-columns:5fr 7fr;gap:var(--space-16)}}
-h2{font-family:var(--font-display);font-size:var(--text-2xl)}
-.lead{font-size:var(--text-lg)}
-.facts{display:grid;gap:var(--space-6);margin-top:var(--space-8)}
-.facts dt{font-size:var(--text-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-muted)}
-.facts dd{font-size:var(--text-lg)}
-.products{background:var(--color-surface);border-block:1px solid var(--color-divider)}
-.grid{display:grid;gap:var(--space-4);margin-top:var(--space-12);grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr))}
-.card{background:var(--color-bg);border:1px solid var(--color-divider);border-radius:var(--radius-lg);padding:var(--space-6);display:flex;flex-direction:column;justify-content:space-between}
-.card .ph{aspect-ratio:4/3;border-radius:var(--radius-sm);background:var(--color-surface-offset);margin-bottom:var(--space-4)}
-.card h3{font-family:var(--font-body);font-weight:700;font-size:var(--text-base)}
-.card p{font-size:var(--text-sm);color:var(--color-text-muted)}
-footer{padding-block:var(--space-12);border-top:1px solid var(--color-divider);font-size:var(--text-sm);color:var(--color-text-muted)}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-4)}
-@media(max-width:640px){nav .hide-m{display:none}}
-@media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;scroll-behavior:auto!important}}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r-sm)}
+h1,h2,h3{text-wrap:balance;line-height:1.08;font-weight:500}
+p{text-wrap:pretty;max-width:58ch}
+.wrap{max-width:1200px;margin-inline:auto;padding-inline:var(--s6)}
+.skip{position:absolute;left:-999px}.skip:focus{left:var(--s4);top:var(--s4);background:var(--surface);padding:var(--s2) var(--s4);z-index:30}
+header{position:sticky;top:0;z-index:20;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--divider)}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:4.25rem;gap:var(--s4)}
+.brand{display:flex;align-items:center;gap:var(--s3);text-decoration:none;font-weight:700;font-size:var(--sm);letter-spacing:.01em}
+.brand svg{width:34px;height:34px;color:var(--accent)}
+nav{display:flex;align-items:center;gap:var(--s6);font-size:var(--sm)}
+nav a.l{text-decoration:none;color:var(--muted);padding:var(--s3) 0}nav a.l:hover{color:var(--text)}
+.toggle{width:44px;height:44px;display:grid;place-items:center;border-radius:var(--r-md)}
+.toggle:hover{background:var(--offset)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:48px;padding:0 var(--s6);border-radius:var(--r-md);background:var(--accent);color:var(--on-accent);font-weight:500;font-size:var(--sm);text-decoration:none}
+.btn:hover{background:var(--accent-hover)}.btn:active{transform:translateY(1px)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--divider)}
+.btn.ghost:hover{background:var(--offset)}
+.btn.sm{min-height:44px;padding:0 var(--s4)}
+.eyebrow{font-size:var(--xs);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.hero{display:grid;gap:var(--s12);align-items:center;padding-block:clamp(var(--s12),8vw,var(--s24))}
+@media(min-width:900px){.hero{grid-template-columns:7fr 5fr;gap:var(--s16)}}
+.hero h1{font-family:var(--display);font-size:var(--hero);letter-spacing:-.025em;margin-top:var(--s6)}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lead{margin-top:var(--s8);font-size:var(--lg);color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s8)}
+.art{aspect-ratio:1/1.05;max-width:460px;width:100%;justify-self:center}
+.art svg{width:100%;height:100%;display:block}
+.hexes polygon{stroke:var(--accent);stroke-width:1.5;fill:none;opacity:.55}
+.hexes polygon.f{fill:var(--tint);opacity:1;stroke:var(--accent)}
+.hexes .oak{stroke:var(--accent);stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:1}
+section{padding-block:clamp(var(--s12),8vw,var(--s24))}
+h2{font-family:var(--display);font-size:var(--x2);letter-spacing:-.015em}
+.lead{font-size:var(--lg)}
+.split{display:grid;gap:var(--s8);grid-template-columns:1fr}
+@media(min-width:860px){.split{grid-template-columns:4fr 8fr;gap:var(--s16)}}
+.facts{display:grid;gap:var(--s6);margin-top:var(--s8);grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.facts dt{font-size:var(--xs);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--s2)}
+.facts dd{font-size:var(--lg);line-height:1.35}
+.offer{background:var(--surface);border-block:1px solid var(--divider)}
+.offer-box{margin-top:var(--s12);border:1px dashed var(--divider);border-radius:var(--r-lg);padding:clamp(var(--s8),6vw,var(--s16));display:grid;gap:var(--s6);justify-items:start;background:var(--bg)}
+.offer-box svg{width:48px;height:48px;color:var(--accent)}
+.offer-box h3{font-family:var(--display);font-size:var(--xl)}
+.offer-box p{color:var(--muted)}
+.contact-card{background:var(--surface);border:1px solid var(--divider);border-radius:var(--r-lg);padding:clamp(var(--s6),4vw,var(--s12));box-shadow:var(--shadow)}
+.contact-card .tel{display:inline-block;font-family:var(--display);font-size:var(--x2);text-decoration:none;letter-spacing:-.01em;margin-block:var(--s2) var(--s6)}
+.contact-card .tel:hover{color:var(--accent)}
+.contact-card address{font-style:normal;font-size:var(--lg);margin-bottom:var(--s6);line-height:1.4}
+footer{padding-block:var(--s12);border-top:1px solid var(--divider);font-size:var(--sm);color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s4)}
+.rv{opacity:0;transition:opacity .7s cubic-bezier(.16,1,.3,1)}.rv.in{opacity:1}
+@media(max-width:640px){nav a.l{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;scroll-behavior:auto!important}.rv{opacity:1}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Przejdź do treści</a>
 <header>
  <div class="wrap bar">
-  <a class="brand" href="#top" aria-label="Pasieka pod Dębem — strona główna">
-   <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M16 2.5l11.3 6.5v13L16 28.5 4.7 22V9z"/><path d="M16 22v-9M16 16l-4-3M16 18l4-3"/></svg>
+  <a class="brand" href="#top" aria-label="Pasieka pod Dębem — początek strony">
+   <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M16 2.5l11.3 6.5v13L16 28.5 4.7 22V9z"/><path d="M16 22v-9M16 16l-4-3M16 18l4-3"/></svg>
    Pasieka pod Dębem
   </a>
   <nav aria-label="Główna nawigacja">
-   <a class="hide-m" href="#o-nas">O pasiece</a>
-   <a class="hide-m" href="#produkty">Produkty</a>
-   <a href="#kontakt">Kontakt</a>
-   <button class="toggle" data-theme-toggle aria-label="Przełącz tryb ciemny"></button>
+   <a class="l" href="#o-nas">O pasiece</a>
+   <a class="l" href="#oferta">Oferta</a>
+   <a class="l" href="#kontakt">Kontakt</a>
+   <a class="btn sm" href="tel:+48665381292">Zadzwoń</a>
+   <button class="toggle" data-theme-toggle aria-label="Przełącz motyw jasny/ciemny"></button>
   </nav>
  </div>
 </header>
 
 <main id="main">
  <div class="wrap hero" id="top">
-  <p class="eyebrow">Kiczyce · Śląsk Cieszyński</p>
-  <h1>Miód z&nbsp;Kiczyc.</h1>
-  <p>Produkty pszczele prosto z pasieki pod Dębem.</p>
-  <div class="cta">
-   <a class="btn" href="#produkty">Zobacz produkty</a>
-   <a class="btn btn-ghost" href="tel:+48665381292">Zadzwoń</a>
+  <div>
+   <p class="eyebrow">Kiczyce · powiat cieszyński</p>
+   <h1>Miód prosto z&nbsp;<em>Kiczyc.</em></h1>
+   <p class="lead">Lokalna pasieka. Miód i produkty pszczele, kupisz po kontakcie telefonicznym.</p>
+   <div class="cta">
+    <a class="btn" href="#oferta">Zobacz ofertę</a>
+    <a class="btn ghost" href="#kontakt">Jak do nas trafić</a>
+   </div>
   </div>
-  <div class="hex" role="img" aria-label="Grafika w kształcie plastra miodu">
-   <svg viewBox="0 0 600 200" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".45" aria-hidden="true">
-    <defs><pattern id="h" width="52" height="60" patternUnits="userSpaceOnUse"><path d="M26 2l22 13v26L26 54 4 41V15z"/></pattern></defs>
-    <rect width="600" height="200" fill="url(#h)"/>
+  <div class="art" role="img" aria-label="Grafika: plaster miodu z symbolem dębu">
+   <svg viewBox="0 0 400 420" class="hexes" aria-hidden="true">
+    <polygon points="200,20 262,56 262,128 200,164 138,128 138,56"/>
+    <polygon class="f" points="294,74 356,110 356,182 294,218 232,182 232,110"/>
+    <polygon points="106,74 168,110 168,182 106,218 44,182 44,110"/>
+    <polygon points="200,128 262,164 262,236 200,272 138,236 138,164" class="f"/>
+    <polygon points="294,182 356,218 356,290 294,326 232,290 232,218"/>
+    <polygon points="106,182 168,218 168,290 106,326 44,290 44,218"/>
+    <polygon points="200,236 262,272 262,344 200,380 138,344 138,272"/>
+    <g class="oak" transform="translate(200 200)">
+     <path d="M0 38V2M0 20c-9-4-14-10-16-18M0 14c8-4 13-9 15-16"/>
+     <path d="M-26-6c-8-6-8-18 2-22 2-10 14-12 20-5 5-8 19-6 21 4 10 1 14 12 6 19-6 6-16 2-19-3-6 5-16 6-21 0-3 6-8 7-9 7z"/>
+    </g>
    </svg>
   </div>
  </div>
 
  <section id="o-nas">
-  <div class="wrap split">
-   <h2>O pasiece</h2>
+  <div class="wrap split rv">
+   <div><p class="eyebrow">O pasiece</p></div>
    <div>
-    <p class="lead">Tu trafi krótki, konkretny opis pasieki: skąd pochodzi, jak pracuje i czym się wyróżnia.</p>
+    <h2>Mała pasieka, lokalny miód.</h2>
+    <p class="lead" style="margin-top:var(--s6);color:var(--muted)">Pasieka pod Dębem działa w Kiczycach w gminie Skoczów. Szukasz miodu od lokalnego pszczelarza, zadzwoń i zapytaj o aktualnie dostępne produkty.</p>
     <dl class="facts">
-     <div><dt>Miejscowość</dt><dd>Kiczyce, powiat cieszyński</dd></div>
-     <div><dt>Adres</dt><dd>ul. Ochabska 92, 43-430 Kiczyce</dd></div>
+     <div><dt>Miejscowość</dt><dd>Kiczyce, 43-430</dd></div>
+     <div><dt>Adres</dt><dd>ul. Ochabska 92</dd></div>
     </dl>
    </div>
   </div>
  </section>
 
- <section class="products" id="produkty">
-  <div class="wrap">
-   <h2>Produkty</h2>
-   <p class="lead" style="margin-top:var(--space-4);color:var(--color-text-muted)">Miejsce na listę produktów.</p>
-   <div class="grid">
-    <article class="card"><div class="ph"></div><div><h3>Produkt 1</h3><p>Krótki opis i gramatura</p></div></article>
-    <article class="card"><div class="ph"></div><div><h3>Produkt 2</h3><p>Krótki opis i gramatura</p></div></article>
-    <article class="card"><div class="ph"></div><div><h3>Produkt 3</h3><p>Krótki opis i gramatura</p></div></article>
-    <article class="card"><div class="ph"></div><div><h3>Produkt 4</h3><p>Krótki opis i gramatura</p></div></article>
+ <section class="offer" id="oferta">
+  <div class="wrap rv">
+   <p class="eyebrow">Oferta</p>
+   <h2 style="margin-top:var(--s4)">Produkty z pasieki.</h2>
+   <div class="offer-box">
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M16 2.5l11.3 6.5v13L16 28.5 4.7 22V9z"/><path d="M10 16h12M16 10v12"/></svg>
+    <h3>Pełna oferta wkrótce online</h3>
+    <p>Aktualne produkty, ceny i dostępność uzgodnisz telefonicznie. Odbiór osobisty w Kiczycach.</p>
+    <a class="btn" href="tel:+48665381292">Zapytaj o ofertę</a>
    </div>
   </div>
  </section>
 
  <section id="kontakt">
-  <div class="wrap split">
-   <h2>Kontakt</h2>
-   <div>
-    <p class="lead">Zadzwoń, aby zapytać o dostępność i odbiór osobisty.</p>
-    <dl class="facts">
-     <div><dt>Telefon</dt><dd><a href="tel:+48665381292">+48 665 381 292</a></dd></div>
-     <div><dt>Adres</dt><dd>ul. Ochabska 92, 43-430 Kiczyce</dd></div>
-    </dl>
-    <div class="cta"><a class="btn" href="tel:+48665381292">Zadzwoń teraz</a></div>
+  <div class="wrap split rv">
+   <div><p class="eyebrow">Kontakt</p></div>
+   <div class="contact-card">
+    <h2>Zadzwoń lub odwiedź nas.</h2>
+    <a class="tel" href="tel:+48665381292" aria-label="Zadzwoń: plus 48 665 381 292">+48 665 381 292</a>
+    <address>Pasieka pod Dębem<br>ul. Ochabska 92<br>43-430 Kiczyce</address>
+    <div class="cta" style="margin-top:0">
+     <a class="btn" href="tel:+48665381292">Zadzwoń teraz</a>
+     <a class="btn ghost" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Ochabska+92+43-430+Kiczyce">Otwórz mapę</a>
+    </div>
    </div>
   </div>
  </section>
 </main>
 
-<footer><div class="wrap"><span>© Pasieka pod Dębem, Kiczyce</span><span>ul. Ochabska 92</span></div></footer>
+<footer><div class="wrap"><span>© Pasieka pod Dębem, Kiczyce</span><span>ul. Ochabska 92, 43-430 Kiczyce</span></div></footer>
 
 <script>
 (function(){
@@ -161,6 +197,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(-
  var moon='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
  function set(){r.setAttribute('data-theme',d);t.innerHTML=d==='dark'?sun:moon}
  set();t.addEventListener('click',function(){d=d==='dark'?'light':'dark';set()});
+ var els=document.querySelectorAll('.rv');
+ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.15});els.forEach(function(el){io.observe(el)})}else{els.forEach(function(el){el.classList.add('in')})}
 })();
 </script>
 </body>
