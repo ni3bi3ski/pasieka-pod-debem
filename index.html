@@ -9,10 +9,11 @@
 <meta property="og:description" content="Miód z lokalnej pasieki. Zamów online, odbierz osobiście w Kiczycach.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#f6f5f1">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pasieka pod Dębem","telephone":"+48665381292","address":{"@type":"PostalAddress","streetAddress":"ul. Ochabska 92","postalCode":"43-430","addressLocality":"Kiczyce","addressCountry":"PL"}}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pasieka pod Dębem","url":"https://ni3bi3ski.github.io/pasieka-pod-debem/","telephone":"+48665381292","address":{"@type":"PostalAddress","streetAddress":"ul. Ochabska 92","postalCode":"43-430","addressLocality":"Kiczyce","addressCountry":"PL"}}
 </script>
 <link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=boska@400,500&display=swap" rel="stylesheet">
@@ -40,10 +41,11 @@
  --display:'Boska',Georgia,serif;--body:'Satoshi','Helvetica Neue',sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;scroll-padding-top:5rem}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;scroll-padding-top:7rem}
 body{min-height:100dvh;line-height:1.6;font-family:var(--body);font-size:var(--base);color:var(--text);background:var(--bg)}
 a,button,input,textarea,summary{transition:color .18s,background .18s,border-color .18s,transform .18s}
 a{color:inherit}button,input,textarea{font:inherit;color:inherit}button{background:none;border:0;cursor:pointer}
+img{display:block;max-width:100%;height:auto}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r-sm)}
 h1,h2,h3{text-wrap:balance;line-height:1.08;font-weight:500}
 p{text-wrap:pretty;max-width:58ch}
@@ -55,6 +57,7 @@ header.top{position:sticky;top:0;z-index:20;background:color-mix(in oklab,var(--
 .brand svg{width:34px;height:34px;color:var(--accent)}
 nav{display:flex;align-items:center;gap:var(--s6);font-size:var(--sm)}
 nav a.l{text-decoration:none;color:var(--muted);padding:var(--s3) 0}nav a.l:hover{color:var(--text)}
+.mnav{display:none}
 .icon-btn{position:relative;width:44px;height:44px;display:grid;place-items:center;border-radius:var(--r-md)}
 .icon-btn:hover{background:var(--offset)}
 .count{position:absolute;top:2px;right:0;min-width:20px;height:20px;border-radius:99px;background:var(--accent);color:var(--on-accent);font-size:var(--xs);font-weight:700;display:grid;place-items:center;padding:0 5px}
@@ -74,10 +77,12 @@ nav a.l{text-decoration:none;color:var(--muted);padding:var(--s3) 0}nav a.l:hove
 .cta{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s8)}
 .art{aspect-ratio:1/1.05;max-width:460px;width:100%;justify-self:center}
 .art svg{width:100%;height:100%;display:block}
+.art img{width:100%;height:100%;object-fit:cover;border-radius:var(--r-lg);box-shadow:var(--shadow)}
 .hexes polygon{stroke:var(--accent);stroke-width:1.5;fill:none;opacity:.55}
 .hexes polygon.f{fill:var(--tint);opacity:1}
 .hexes .oak{stroke:var(--accent);stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
 section{padding-block:clamp(var(--s12),8vw,var(--s24))}
+section[hidden]{display:none}
 h2{font-family:var(--display);font-size:var(--x2);letter-spacing:-.015em}
 .lead{font-size:var(--lg)}
 .split{display:grid;gap:var(--s8);grid-template-columns:1fr}
@@ -94,14 +99,19 @@ h2{font-family:var(--display);font-size:var(--x2);letter-spacing:-.015em}
 .steps span{color:var(--muted);font-size:var(--sm)}
 .grid{display:grid;gap:var(--s6);margin-top:var(--s12);grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr))}
 .card{background:var(--bg);border:1px solid var(--divider);border-radius:var(--r-lg);padding:var(--s6);display:flex;flex-direction:column;gap:var(--s3);box-shadow:var(--shadow)}
-.card .jar{width:100%;aspect-ratio:4/3;border-radius:var(--r-md);background:var(--tint);display:grid;place-items:center}
+.card .jar{width:100%;aspect-ratio:4/3;border-radius:var(--r-md);background:var(--tint);display:grid;place-items:center;overflow:hidden}
 .card .jar svg{width:96px;height:96px}
+.card .jar img{width:100%;height:100%;object-fit:cover}
 .card h3{font-family:var(--display);font-size:var(--xl)}
 .card p{color:var(--muted);font-size:var(--sm)}
 .card .row{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);margin-top:auto;padding-top:var(--s3)}
 .price{font-weight:700;font-size:var(--lg);font-variant-numeric:tabular-nums}
 .price.ask{font-size:var(--sm);font-weight:500;color:var(--muted)}
 .note{margin-top:var(--s8);font-size:var(--sm);color:var(--muted);max-width:70ch}
+.gallery{display:grid;gap:var(--s4);margin-top:var(--s12);grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr))}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-md);background:var(--offset)}
+.gallery figure:nth-child(3n+1){grid-column:span 1}
+@media(min-width:900px){.gallery figure:first-child{grid-column:span 2}.gallery figure:first-child img{aspect-ratio:2/1}}
 .faq{margin-top:var(--s8);max-width:780px}
 .faq details{border-top:1px solid var(--divider)}.faq details:last-child{border-bottom:1px solid var(--divider)}
 .faq summary{cursor:pointer;list-style:none;padding:var(--s4) 0;min-height:44px;font-weight:500;font-size:var(--lg);display:flex;justify-content:space-between;gap:var(--s4)}
@@ -138,7 +148,14 @@ footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:
 .field textarea{resize:vertical;min-height:72px}
 .msg{font-size:var(--sm);color:var(--muted);min-height:1.5em}
 .rv{opacity:0;transition:opacity .7s cubic-bezier(.16,1,.3,1)}.rv.in{opacity:1}
-@media(max-width:640px){nav a.l{display:none}}
+@media(max-width:640px){
+ nav a.l{display:none}
+ .mnav{display:flex;gap:var(--s6);overflow-x:auto;padding-inline:var(--s6);border-top:1px solid var(--divider);font-size:var(--sm);scrollbar-width:none}
+ .mnav::-webkit-scrollbar{display:none}
+ .mnav a{flex:none;display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:var(--muted)}
+ .mnav a:hover{color:var(--text)}
+ html{scroll-padding-top:8rem}
+}
 @media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;scroll-behavior:auto!important}.rv{opacity:1}}
 </style>
 </head>
@@ -162,6 +179,12 @@ footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:
    </button>
   </nav>
  </div>
+ <nav class="mnav" aria-label="Nawigacja mobilna">
+  <a href="#o-nas">O pasiece</a>
+  <a href="#sklep">Sklep</a>
+  <a href="#faq">Pytania</a>
+  <a href="#kontakt">Kontakt</a>
+ </nav>
 </header>
 
 <main id="main">
@@ -175,7 +198,7 @@ footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:
     <a class="btn ghost" href="#kontakt">Jak do nas trafić</a>
    </div>
   </div>
-  <div class="art" role="img" aria-label="Grafika: plaster miodu z symbolem dębu">
+  <div class="art" id="art" role="img" aria-label="Grafika: plaster miodu z symbolem dębu">
    <svg viewBox="0 0 400 420" class="hexes" aria-hidden="true">
     <polygon points="200,20 262,56 262,128 200,164 138,128 138,56"/>
     <polygon class="f" points="294,74 356,110 356,182 294,218 232,182 232,110"/>
@@ -204,6 +227,14 @@ footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:
      <div><dt>Odbiór</dt><dd>Osobisty, po potwierdzeniu zamówienia</dd></div>
     </dl>
    </div>
+  </div>
+ </section>
+
+ <section id="galeria" class="alt" hidden>
+  <div class="wrap rv">
+   <p class="eyebrow">Galeria</p>
+   <h2 style="margin-top:var(--s4)">Z pasieki.</h2>
+   <div class="gallery" id="gallery"></div>
   </div>
  </section>
 
@@ -281,14 +312,25 @@ footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:
 </aside>
 
 <script>
-/* KATALOG — edytuj tutaj. price: kwota w zł albo null (wtedy "Zapytaj o cenę"). tone: kolor miodu w ilustracji. */
+/* ===== KONFIGURACJA — tu uzupełniasz zdjęcia i ceny =====
+   Zdjęcia wrzuć do folderu assets/ w repozytorium i wpisz ścieżkę, np. 'assets/hero.jpg'.
+   Puste ('' lub null) = strona pokazuje ilustrację zamiast zdjęcia.
+   price: kwota w zł (np. 38) albo null = "Zapytaj o cenę".
+   stock: false = przycisk "Brak" zamiast "Dodaj".
+   img: zdjęcie słoika albo null. */
+var HERO_IMG='';
+var HERO_ALT='Pasieka pod Dębem w Kiczycach';
+var GALLERY=[
+ /* {src:'assets/pasieka-1.jpg',alt:'Opis zdjęcia',w:1600,h:1200}, */
+];
 var PRODUCTS=[
- {id:'wielokwiatowy',name:'Miód wielokwiatowy',desc:'Słoik 400 g.',price:null,tone:'#d9a032'},
- {id:'lipowy',name:'Miód lipowy',desc:'Słoik 400 g.',price:null,tone:'#c98a1e'},
- {id:'rzepakowy',name:'Miód rzepakowy',desc:'Słoik 400 g.',price:null,tone:'#ecd48a'},
- {id:'spadziowy',name:'Miód spadziowy',desc:'Słoik 400 g.',price:null,tone:'#7a4a14'}
+ {id:'wielokwiatowy',name:'Miód wielokwiatowy',desc:'Słoik 400 g.',price:null,stock:true,img:null,tone:'#d9a032'},
+ {id:'lipowy',name:'Miód lipowy',desc:'Słoik 400 g.',price:null,stock:true,img:null,tone:'#c98a1e'},
+ {id:'rzepakowy',name:'Miód rzepakowy',desc:'Słoik 400 g.',price:null,stock:true,img:null,tone:'#ecd48a'},
+ {id:'spadziowy',name:'Miód spadziowy',desc:'Słoik 400 g.',price:null,stock:true,img:null,tone:'#7a4a14'}
 ];
 var PHONE='+48665381292';
+/* ===== KONIEC KONFIGURACJI ===== */
 (function(){
  var cart={},lastFocus=null,$=function(s){return document.querySelector(s)};
  var jarIcon='<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M16 2.5l11.3 6.5v13L16 28.5 4.7 22V9z"/><path d="M10 16h12M16 10v12"/></svg>';
@@ -296,7 +338,12 @@ var PHONE='+48665381292';
  var fmt=function(n){return n.toFixed(2).replace('.',',')+' zł'};
  var priceTxt=function(p){return p.price==null?'Zapytaj o cenę':fmt(p.price)};
  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
- $('#grid').innerHTML=PRODUCTS.map(function(p){return '<article class="card"><div class="jar">'+jar(p.tone)+'</div><h3>'+esc(p.name)+'</h3><p>'+esc(p.desc)+'</p><div class="row"><span class="price'+(p.price==null?' ask':'')+'">'+priceTxt(p)+'</span><button class="btn sm" data-add="'+p.id+'" aria-label="Dodaj do koszyka: '+esc(p.name)+'">Dodaj</button></div></article>'}).join('');
+ if(HERO_IMG){var art=$('#art');art.setAttribute('aria-label',HERO_ALT);art.innerHTML='<img src="'+esc(HERO_IMG)+'" alt="'+esc(HERO_ALT)+'" width="920" height="966" decoding="async">';var og=document.createElement('meta');og.setAttribute('property','og:image');og.content=new URL(HERO_IMG,location.href).href;document.head.appendChild(og)}
+ if(GALLERY.length){$('#galeria').hidden=false;$('#gallery').innerHTML=GALLERY.map(function(g){return '<figure><img src="'+esc(g.src)+'" alt="'+esc(g.alt||'')+'" width="'+(g.w||1600)+'" height="'+(g.h||1200)+'" loading="lazy" decoding="async"></figure>'}).join('')}
+ $('#grid').innerHTML=PRODUCTS.map(function(p){
+  var pic=p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.name)+'" width="640" height="480" loading="lazy" decoding="async">':jar(p.tone);
+  var btn=p.stock===false?'<button class="btn sm" disabled aria-label="Brak: '+esc(p.name)+'">Brak</button>':'<button class="btn sm" data-add="'+p.id+'" aria-label="Dodaj do koszyka: '+esc(p.name)+'">Dodaj</button>';
+  return '<article class="card"><div class="jar">'+pic+'</div><h3>'+esc(p.name)+'</h3><p>'+esc(p.desc)+'</p><div class="row"><span class="price'+(p.price==null?' ask':'')+'">'+priceTxt(p)+'</span>'+btn+'</div></article>'}).join('');
  function find(id){return PRODUCTS.filter(function(p){return p.id===id})[0]}
  function summary(){
   var t=0,ask=false,lines=Object.keys(cart).map(function(id){var p=find(id),q=cart[id];if(p.price==null)ask=true;else t+=p.price*q;return q+' x '+p.name});
