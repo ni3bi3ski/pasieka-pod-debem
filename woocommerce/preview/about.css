@@ -1,0 +1,16 @@
+/* Sekcja „O nas i historia pasieki” */
+.about-story{display:grid;gap:2.5rem}
+.story-intro{max-width:52rem}
+.story-intro p{margin-top:1rem;color:var(--muted,#5c5347);line-height:1.7}
+.story-grid{display:grid;gap:2rem;align-items:center}
+.story-media{margin:0;border-radius:var(--radius,18px);overflow:hidden;background:#f4efe6}
+.story-media img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
+.story-media figcaption{padding:.75rem 1rem;font-size:.8rem;color:#7a6f61}
+.story-copy h3{margin:0 0 .75rem;font-size:1.35rem}
+.story-copy p{margin:0 0 1rem;color:var(--muted,#5c5347);line-height:1.7}
+.story-values{display:grid;gap:1.25rem}
+.story-values div{padding:1.5rem;border:1px solid rgba(0,0,0,.08);border-radius:var(--radius,18px);background:#fffdf9}
+.story-values h3{margin:0 0 .5rem;font-size:1.1rem}
+.story-values p{margin:0;color:var(--muted,#5c5347);line-height:1.65}
+.story-cta{display:flex;flex-wrap:wrap;gap:1.5rem}
+@media(min-width:820px){.story-grid{grid-template-columns:1fr 1fr}.story-values{grid-template-columns:repeat(3,1fr)}}
