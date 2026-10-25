@@ -1,0 +1,2 @@
+<?php if (!defined('ABSPATH')) { exit; } get_header(); ?>
+<main id="main" class="wrap page-content"><?php if (have_posts()): while (have_posts()): the_post(); ?><article <?php post_class(); ?>><h1><?php the_title(); ?></h1><div class="entry-content"><?php the_content(); wp_link_pages(); ?></div></article><?php endwhile; the_posts_pagination(); else: ?><h1>Brak treści</h1><p>Wróć na <a href="<?php echo esc_url(home_url('/')); ?>">stronę główną</a>.</p><?php endif; ?></main><?php get_footer(); ?>
