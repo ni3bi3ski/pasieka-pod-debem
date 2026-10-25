@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://ni3bi3ski.github.io/pasieka-pod-debem/sitemap.xml
