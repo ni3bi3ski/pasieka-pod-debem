@@ -1,0 +1,5 @@
+SPDX-License-Identifier: GPL-2.0-or-later
+Kod i autorskie ilustracje udostępniono na warunkach GNU General Public License w wersji 2 lub późniejszej.
+Tekst: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Projekt bez gwarancji; wymaga testów przed użyciem produkcyjnym.
+WordPress, WooCommerce i osobno instalowane integracje mają własne licencje.

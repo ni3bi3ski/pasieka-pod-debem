@@ -1,0 +1,22 @@
+{
+  "version": "1.0.1",
+  "scope": "Historical static checks of the locally prepared package; not a WordPress runtime certification",
+  "local_package_commit": "8e0cd238e87490e83ff6729e80b97ad3427007a7",
+  "published_plugin_commit": "ea4cdd5d1c72c72ddaced88ede156b5921ab6fc8",
+  "published_theme_commit": "584bcc360bfaa885f72526816b9eb59d3dc0382e",
+  "historical_checks": {
+    "javascript_syntax": true,
+    "preview_unique_ids": true,
+    "preview_internal_links": true,
+    "preview_assets_present": true,
+    "preview_image_alt_attributes": true,
+    "installers_integrity_and_source_match": true,
+    "patch_apply_check_and_content_match": true,
+    "git_bundle_verify": true
+  },
+  "repository_preview_change": "Uses CSS import from the theme instead of a duplicated stylesheet; visual test not rerun",
+  "php_lint": "not_run_no_php_interpreter",
+  "wordpress_runtime": "not_run",
+  "browser_visual_tests": "not_run",
+  "payment_integration_tests": "not_run"
+}
