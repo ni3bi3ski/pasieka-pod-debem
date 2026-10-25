@@ -1,4 +1,17 @@
 /* Catalog 3: korekty kompaktowego ukladu; bez zmiany zrodlowych fotografii. */
 .hero{padding:32px 0 23px}.hero h1{font-size:clamp(36px,4.5vw,52px)}.catalog-filters{gap:28px}.catalog-status,.catalog-note,.copyright{font-size:12px}.demo-banner{font-size:12px}.product-media{height:clamp(260px,27vw,340px);aspect-ratio:auto}.product-heading{margin-bottom:9px}.variant-buttons{padding-top:3px}.single-weight{font-size:12px}.catalog-bottom{margin-top:25px;gap:13px}.about-faq p{font-size:14px}.filter:focus-visible{outline-offset:-3px}
-@media(max-width:760px){.hero{padding:24px 0 18px}.hero h1{font-size:clamp(34px,8.5vw,45px)}.catalog-filters{gap:20px}.catalog-status,.catalog-note,.demo-banner{font-size:12px}.filter{font-size:13px}.product-media{height:clamp(190px,50vw,220px);aspect-ratio:auto}.weight-option,.single-weight{font-size:12px}.catalog-bottom{margin-top:22px}.about-faq p{font-size:14px}}
+/* Product cards: shared frame, calmer photo field, clearer price hierarchy. */
+.sample-card{padding:10px;background:var(--white);border:1px solid var(--line);border-radius:4px;box-shadow:0 1px 2px rgba(39,53,44,.05);transition:box-shadow .18s ease,transform .18s ease}
+.sample-card:hover{box-shadow:0 5px 16px rgba(39,53,44,.09);transform:translateY(-2px)}
+.product-media{border-radius:3px;background:#f4f0e6}
+.product-media>img{mix-blend-mode:multiply}
+.product-heading{align-items:baseline}
+.sample-card h3{font-size:20px}
+.product-price{font-size:23px;font-weight:700;color:var(--ink)}
+.single-weight,.weight-option{font-size:12px;color:var(--muted)}
+.weight-option{border-radius:2px;border-color:#b3bcae}
+.weight-option[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+.notice,.catalog-status{color:#79806f;opacity:.86}
+@media(max-width:760px){.hero{padding:24px 0 18px}.hero h1{font-size:clamp(34px,8.5vw,45px)}.catalog-filters{gap:20px}.catalog-status,.catalog-note,.demo-banner{font-size:12px}.filter{font-size:13px}.product-media{height:clamp(190px,50vw,220px);aspect-ratio:auto}.weight-option,.single-weight{font-size:12px}.catalog-bottom{margin-top:22px}.about-faq p{font-size:14px}.sample-card{padding:8px}.sample-card h3{font-size:19px}.product-price{font-size:21px}}
 @media(max-width:359px){.product-media{height:clamp(220px,70vw,280px);aspect-ratio:auto}.catalog-filters{gap:14px}.filter{font-size:12px}.variant-buttons .weight-option{flex:0 1 auto}}
+@media(prefers-reduced-motion:reduce){.sample-card,.sample-card:hover{transition:none;transform:none}}
