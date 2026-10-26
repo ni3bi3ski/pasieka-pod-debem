@@ -6,15 +6,26 @@ We wcześniejszej sesji przygotowania sprawdzono składnię JavaScript, linki i 
 
 Nie wykonano PHP lint (brak interpretera PHP), instalacji WordPressa, testów przeglądarkowych ani płatności. Kontrole plików nie są audytem bezpieczeństwa, dostępności ani prawa. Nie deklarujemy przetestowanego sklepu produkcyjnego.
 
+Plik products-import.csv sprawdzono skryptowo (poprawne kolumny, unikalne SKU, każdy wariant wskazuje istniejący produkt nadrzędny); nie importowano go do WooCommerce.
+
 ## Instalacja i bezpieczeństwo na stagingu
 
 - [ ] Backup bazy i plików, HTTPS oraz hasło hostingu.
 - [ ] PHP lint: find wp-content/themes/pasieka-pod-debem wp-content/plugins/pasieka-start -name '*.php' -exec php -l {} \;
 - [ ] Aktywacja z WooCommerce bez błędów PHP.
-- [ ] Dwukrotne uruchomienie instalatora bez dublowania szkiców.
-- [ ] Dokumenty pozostają szkicami; produkty bez cen i z zerowym stanem.
+- [ ] Dwukrotne uruchomienie instalatora bez dublowania stron.
+- [ ] Dokumenty pozostają szkicami; zaimportowane produkty mają stan „brak w magazynie”.
 - [ ] Konfiguracja wymaga administratora i poprawnego nonce.
 - [ ] Prawidłowe przypisanie katalogu, koszyka, checkoutu, konta i permalinków.
+
+## Import produktów
+
+- [ ] Import products-import.csv na stagingu kończy się bez błędów: 21 produktów (11 z wariantami, 10 prostych) i 22 warianty.
+- [ ] Ceny wariantów zgodne z cennikiem 2026; produkt z wariantami pokazuje cenę „od”.
+- [ ] Gramatury widoczne jako wybór wariantu (400 g / 1100 g, 200 g / 500 g).
+- [ ] Ponowny import z opcją aktualizacji nie dubluje produktów ani wariantów.
+- [ ] Brak produktów o SKU PPD-START-* (stara wersja wtyczki).
+- [ ] Po ustawieniu stanu „na stanie” wariant można dodać do koszyka (przy odblokowanym sklepie testowym).
 
 ## Wygląd i obsługa
 

@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Pasieka — start sklepu
- * Description: Strony i szkice WooCommerce, lista wdrożeniowa i blokada sprzedaży przed uruchomieniem.
- * Version: 1.0.1
+ * Description: Strony WooCommerce, lista wdrożeniowa i blokada sprzedaży przed uruchomieniem.
+ * Version: 1.0.2
  * Requires at least: 6.6
  * Requires PHP: 8.1
  * Author: Projekt Pasieka Pod Dębem
@@ -65,21 +65,6 @@ function ppds_setup() {
         update_option('woocommerce_'.$option.'_page_id',$id);
     }
     foreach (ppds_legal_drafts() as $slug=>$data) { ppds_insert_page($slug,$data[0],$data[1]); }
-    $ids=get_option('ppds_product_ids',array());
-    foreach (array('wielokwiatowy'=>'Miód wielokwiatowy','lipowy'=>'Miód lipowy','rzepakowy'=>'Miód rzepakowy','spadziowy'=>'Miód spadziowy') as $slug=>$name) {
-        if (!empty($ids[$slug]) && get_post($ids[$slug])) { continue; }
-        $sku='PPD-START-'.$slug;
-        $existing=wc_get_product_id_by_sku($sku);
-        if ($existing) { $ids[$slug]=$existing; update_option('ppds_product_ids',$ids); continue; }
-        $p=new WC_Product_Simple();
-        $p->set_name($name); $p->set_slug('miod-'.$slug); $p->set_sku($sku); $p->set_status('draft');
-        $p->set_short_description('Opis do uzupełnienia po potwierdzeniu produktu.');
-        $p->set_description('SZKIC ROBOCZY: potwierdź rodzaj i pochodzenie miodu, gramaturę, cenę, zdjęcie, dostępność i informacje wymagane dla oferowanego produktu. Nie publikuj przed weryfikacją.');
-        $p->set_catalog_visibility('visible'); $p->set_manage_stock(true); $p->set_stock_quantity(0); $p->set_stock_status('outofstock');
-        $id=$p->save();
-        if (!$id) { throw new Exception('Nie udało się zapisać produktu.'); }
-        $ids[$slug]=$id; update_option('ppds_product_ids',$ids);
-    }
     update_option('ppds_initialized','yes'); flush_rewrite_rules(false);
 }
 function ppds_checks() {
@@ -115,7 +100,7 @@ function ppds_handle_action() {
     check_admin_referer('ppds_action');
     $action=isset($_POST['ppds_do'])?sanitize_key(wp_unslash($_POST['ppds_do'])):'';
     try {
-        if ($action==='setup') { ppds_setup(); $message='Utworzono brakujące strony i szkice produktów bez nadpisywania istniejących treści.'; }
+        if ($action==='setup') { ppds_setup(); $message='Utworzono brakujące strony i dokumenty robocze bez nadpisywania istniejących treści.'; }
         elseif ($action==='front') {
             $id=ppds_insert_page('strona-glowna','Strona główna','','publish');
             if (get_post_status($id)!=='publish') { throw new Exception('Istniejąca strona startowa nie jest opublikowana. Najpierw sprawdź ją w zakładce Strony.'); }
@@ -153,8 +138,8 @@ function ppds_admin_screen() {
     echo '<div class="wrap" style="max-width:980px"><h1>Pasieka — wdrożenie sklepu</h1><p>Stan sprzedaży: <strong>'.(ppds_closed()?'ZABLOKOWANA':'ODBLOKOWANA').'</strong></p>';
     $feedback=get_transient('ppds_feedback_'.get_current_user_id());
     if ($feedback) { delete_transient('ppds_feedback_'.get_current_user_id()); echo '<div class="notice notice-'.esc_attr($feedback[0]).'"><p>'.esc_html($feedback[1]).'</p></div>'; }
-    echo '<p>Pracuj na nowej instalacji lub chronionej kopii testowej. Zrób backup. Wtyczka nie tworzy kont operatorów ani nie zastępuje audytu.</p><h2>1. Struktura i oferta</h2><p>Tworzy brakujące strony i cztery szkice bez cen, zdjęć i gramatur. Dokumenty pozostają szkicami. Istniejące treści nie są nadpisywane. Nowy koszyk i checkout mają klasyczne shortcode.</p>';
-    ppds_form_button('setup','Utwórz brakujące strony i szkice produktów');
+    echo '<p>Pracuj na nowej instalacji lub chronionej kopii testowej. Zrób backup. Wtyczka nie tworzy kont operatorów ani nie zastępuje audytu.</p><h2>1. Struktura i oferta</h2><p>Tworzy brakujące strony sklepu oraz dokumenty robocze. Dokumenty pozostają szkicami. Istniejące treści nie są nadpisywane. Nowy koszyk i checkout mają klasyczne shortcode. Produkty zaimportuj z pliku woocommerce/products-import.csv (Produkty → Importuj); instrukcja jest w WDROZENIE.md.</p>';
+    ppds_form_button('setup','Utwórz brakujące strony i dokumenty robocze');
     echo '<h2>2. Strona główna i waluta</h2><p>Osobne operacje świadomie zmieniają stronę główną oraz walutę i jednostki sklepu.</p>';
     ppds_form_button('front','Ustaw stronę startową Pasieki jako główną');
     ppds_form_button('pl','Ustaw PLN, kraj Polska i jednostki kg/cm');

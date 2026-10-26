@@ -23,12 +23,13 @@ W WordPressie:
 1. Zainstaluj i aktywuj WooCommerce.
 2. Wygląd → Motywy → Dodaj nowy → Wyślij motyw: pasieka-pod-debem.zip.
 3. Wtyczki → Dodaj nową → Wyślij wtyczkę: pasieka-start.zip.
-4. W menu Pasieka utwórz brakujące strony i szkice produktów.
+4. W menu Pasieka utwórz brakujące strony i dokumenty robocze.
 5. Osobnym przyciskiem ustaw stronę główną Pasieki.
 6. Na nowym polskim sklepie ustaw PLN/Polskę/kg/cm osobnym przyciskiem. Zmiana waluty nie przelicza istniejących cen.
-7. Zapisz bezpośrednie odnośniki i sprawdź katalog, koszyk, zamówienie oraz konto.
+7. Zaimportuj produkty z pliku woocommerce/products-import.csv (sekcja 4).
+8. Zapisz bezpośrednie odnośniki i sprawdź katalog, koszyk, zamówienie oraz konto.
 
-Istniejące strony i produkty nie są nadpisywane. Jeśli strona o tym samym adresie już istnieje, sprawdź treść i publikację ręcznie. Koszyk i checkout są tworzone przez klasyczne shortcode.
+Istniejące strony nie są nadpisywane. Jeśli strona o tym samym adresie już istnieje, sprawdź treść i publikację ręcznie. Koszyk i checkout są tworzone przez klasyczne shortcode.
 
 ## 3. Wygląd i kontakt
 
@@ -42,9 +43,18 @@ Stary index.html zawierał +48 665 381 292 i ul. Ochabska 92, 43-430 Kiczyce. Ni
 
 ## 4. Produkty
 
-Szkice: wielokwiatowy, lipowy, rzepakowy i spadziowy. Usuń te, których nie oferujesz. Potwierdź nazwę, pochodzenie, opis, gramaturę i informacje wymagane dla oferowanego produktu. Dodaj realne zdjęcie, cenę końcową, właściwe podatki, rzeczywisty stan i masę wysyłkową. Szkice startują bez cen i z zerowym stanem; nie ustawiono potwierdzonych gramatur.
+Oferta pochodzi z pliku woocommerce/products-import.csv (Produkty → Importuj). Plik zawiera 21 produktów: 10 miodów klasycznych i pyłek pszczeli jako produkty z wariantami gramatury (22 warianty) oraz 9 miodów kremowanych i pierzgę jako produkty proste. Każdy wariant ma własny SKU (np. MW-LIPOWY-400G) połączony z produktem nadrzędnym kolumną Parent oraz cenę z cennika 2026.
 
-Warianty wagowe dodaj jako produkt z wariantami. Masa produktu i masa zapakowanej przesyłki mogą się różnić. Po publikacji rzeczywistych produktów strona główna pokazuje WooCommerce zamiast kart planowanej oferty.
+Przed importem i po nim:
+- Importuj najpierw na stagingu. Przy ponownym imporcie zaznacz „Aktualizuj istniejące produkty” — dopasowanie odbywa się po SKU, więc pozycje nie zostaną zdublowane.
+- Wtyczka pasieka-start nie tworzy już szkiców produktów. Jeśli instalowałeś starszą wersję (1.0.1), usuń szkice o SKU PPD-START-* przed importem.
+- Wszystkie produkty startują ze stanem „brak w magazynie”. Po potwierdzeniu dostępności zmień stan zbiorczo (Produkty → zaznacz → Edycja zbiorowa) lub w wariantach. Kontrola we wtyczce wymaga co najmniej jednego produktu z ceną i dostępnością.
+- Gramatury zapisano jako „400 g”, „1100 g”, „200 g” i „500 g”. Importer rozdziela wartości atrybutów przecinkami, więc zapis „1,1 kg” zostałby rozbity na dwie wartości.
+- Ceny wpisano z cennika 2026. Potwierdź, że są to ceny końcowe (brutto), oraz ustaw właściwe podatki. Pierzga 0,5 kg nie ma ceny w cenniku i nie została dodana.
+- Plik nie zawiera zdjęć, opisów alternatywnych ani masy wysyłkowej. Dodaj realne zdjęcia (najlepiej w proporcji 3:4), cenę końcową, podatki, rzeczywisty stan i masę zapakowanej przesyłki.
+- Nazwy w sklepie są pełne („Miód lipowy”, „Miód kremowany z maliną”), bo kategorie i koszyk nie pokazują kontekstu zakładek z podglądu.
+
+Sprawdź po imporcie: 21 produktów, 22 warianty, poprawne ceny wariantów, kategorie Miody klasyczne / Kremowane / Pyłek i pierzga oraz brak duplikatów.
 
 ## 5. Ustawienia sklepu
 
@@ -65,7 +75,7 @@ Cztery strony informacyjne są szkicami. Uzupełnij je zgodnie z realnym sprzeda
 
 Przypisz opublikowaną politykę w Ustawienia → Prywatność oraz regulamin w WooCommerce → Ustawienia → Zaawansowane. Sprawdź koszyk, zamówienie i konto. Stopka używa slugów regulamin, polityka-prywatnosci, dostawa-i-platnosci, zwroty-i-reklamacje. Zmiana slugów wymaga zmiany odwołań w footer.php.
 
-Motyw nie dodaje analityki, reklam, zewnętrznych fontów ani osadzonej mapy. Zrób audyt cookies i potrzebnych zgód po instalacji dodatków. Link do mapy otwiera usługę dopiero po kliknięciu.
+Motyw nie dodaje analityki, reklam ani zewnętrznych fontów. Osadzona mapa Google ładuje się dopiero po kliknięciu „Pokaż mapę”. Zrób audyt cookies i potrzebnych zgód po instalacji dodatków.
 
 ## 7. Testy bez otwierania produkcji
 

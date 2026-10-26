@@ -1,22 +1,44 @@
-ID,Type,SKU,Name,Published,Is featured?,Visibility in catalog,Short description,Description,Regular price,Categories,Images,Attribute 1 name,Attribute 1 value(s)
-,variable,MW-WIELKOWIATOWY,Wielokwiatowy,1,0,visible,"Łagodny, kwiatowy miód na co dzień — do herbaty, kanapek i wypieków.","Łagodny, kwiatowy miód na co dzień — do herbaty, kanapek i wypieków.","","Miody klasyczne","","Gramatura","400 g | 1,1 kg"
-,variable,MW-RZEPAKOWY,Rzepakowy,1,0,visible,"Jasny, delikatnie słodki miód, który po krystalizacji nabiera kremowej konsystencji.","Jasny, delikatnie słodki miód, który po krystalizacji nabiera kremowej konsystencji.","","Miody klasyczne","","Gramatura","400 g | 1,1 kg"
-,variable,MW-MNISZKOWY,Mniszkowy,1,0,visible,"Złoty miód o łagodnym, kwiatowym smaku — dobry do herbaty i deserów.","Złoty miód o łagodnym, kwiatowym smaku — dobry do herbaty i deserów.","","Miody klasyczne","","Gramatura","400 g | 1,1 kg"
-,variable,MW-NAWLOCIOWY,Nawłociowy,1,0,visible,"Jasny miód o delikatnym, kwiatowym aromacie późnego lata.","Jasny miód o delikatnym, kwiatowym aromacie późnego lata.","","Miody klasyczne","","Gramatura","400 g | 1,1 kg"
-,variable,MW-SLONECZNIKOWY,Słonecznikowy,1,0,visible,"Jasny miód o łagodnym smaku, który szybko krystalizuje się do gęstej konsystencji.","Jasny miód o łagodnym smaku, który szybko krystalizuje się do gęstej konsystencji.","","Miody klasyczne","","Gramatura","400 g | 1,1 kg"
-,variable,MW-LIPOWY,Lipowy,1,0,visible,"Aromatyczny miód o wyraźnym, kwiatowo-ziołowym charakterze.","Aromatyczny miód o wyraźnym, kwiatowo-ziołowym charakterze.","","Miody klasyczne","","Gramatura","400 g | 1,1 kg"
-,variable,MW-AKACJOWY,Akacjowy,1,0,visible,"Delikatny, jasny miód o łagodnym smaku i płynnej konsystencji.","Delikatny, jasny miód o łagodnym smaku i płynnej konsystencji.","","Miody klasyczne","","Gramatura","400 g | 1,1 kg"
-,variable,MW-GRYCZANY,Gryczany,1,0,visible,"Ciemny miód o wyrazistym, charakterystycznym smaku.","Ciemny miód o wyrazistym, charakterystycznym smaku.","","Miody klasyczne","","Gramatura","400 g | 1,1 kg"
-,variable,MW-SPADZIOWY,Spadziowy,1,0,visible,"Ciemny miód leśny o głębokim, żywicznym aromacie.","Ciemny miód leśny o głębokim, żywicznym aromacie.","","Miody klasyczne","","Gramatura","400 g | 1,1 kg"
-,variable,MW-NEKTAROWO-SPADZIOWY,Nektarowo-spadziowy,1,0,visible,"Połączenie nektaru kwiatowego i spadzi leśnej o złożonym, głębokim smaku.","Połączenie nektaru kwiatowego i spadzi leśnej o złożonym, głębokim smaku.","","Miody klasyczne","","Gramatura","400 g | 1,1 kg"
-,simple,MK-MALINA,Z maliną,1,0,visible,"Kremowany miód z dodatkiem malin — owocowy akcent do kanapek i deserów.","Kremowany miód z dodatkiem malin — owocowy akcent do kanapek i deserów.",36,Kremowane,,"Gramatura","400 g"
-,simple,MK-CYTRYNA,Z cytryną,1,0,visible,"Kremowany miód z cytryną — cytrusowa świeżość do herbaty i śniadania.","Kremowany miód z cytryną — cytrusowa świeżość do herbaty i śniadania.",36,Kremowane,,"Gramatura","400 g"
-,simple,MK-ROKITNIK,Z rokitnikiem,1,0,visible,"Kremowany miód z rokitnikiem o wyrazistym, owocowym charakterze.","Kremowany miód z rokitnikiem o wyrazistym, owocowym charakterze.",36,Kremowane,,"Gramatura","400 g"
-,simple,MK-TRUSKAWKA,Z truskawką,1,0,visible,"Kremowany miód z truskawką — słodki, owocowy dodatek do śniadania.","Kremowany miód z truskawką — słodki, owocowy dodatek do śniadania.",36,Kremowane,,"Gramatura","400 g"
-,simple,MK-ZURAWINA,Z żurawiną,1,0,visible,"Kremowany miód z żurawiną o lekko kwaskowym, owocowym smaku.","Kremowany miód z żurawiną o lekko kwaskowym, owocowym smaku.",36,Kremowane,,"Gramatura","400 g"
-,simple,MK-LIMONKA-MIETA,Limonka i mięta,1,0,visible,"Kremowany miód z limonką i miętą — orzeźwiający akcent do herbaty.","Kremowany miód z limonką i miętą — orzeźwiający akcent do herbaty.",36,Kremowane,,"Gramatura","400 g"
-,simple,MK-CZARNA-PORZECZKA,Z czarną porzeczką,1,0,visible,"Kremowany miód z czarną porzeczką o głębokim, owocowym smaku.","Kremowany miód z czarną porzeczką o głębokim, owocowym smaku.",36,Kremowane,,"Gramatura","400 g"
-,simple,MK-CZERWONA-PORZECZKA,Z czerwoną porzeczką,1,0,visible,"Kremowany miód z czerwoną porzeczką — lekko kwaskowy i owocowy.","Kremowany miód z czerwoną porzeczką — lekko kwaskowy i owocowy.",36,Kremowane,,"Gramatura","400 g"
-,simple,MK-PILEK,Z pyłkiem pszczelim,1,0,visible,"Kremowany miód z pyłkiem pszczelim — naturalny dodatek do codziennych porcji.","Kremowany miód z pyłkiem pszczelim — naturalny dodatek do codziennych porcji.",36,Kremowane,,"Gramatura","400 g"
-,variable,PP-PILEK,Pyłek pszczeli,1,0,visible,"Naturalny pyłek pszczeli w słoiku — dodatek do jogurtów, koktajli i owsianki.","Naturalny pyłek pszczeli w słoiku — dodatek do jogurtów, koktajli i owsianki.","","Pyłek i pierzga","","Gramatura","200 g | 0,5 kg"
-,simple,PZ-PIERZGA,Pierzga,1,0,visible,"Pierzga pszczela — naturalny produkt pasieczny w słoiku.","Pierzga pszczela — naturalny produkt pasieczny w słoiku.",80,Pyłek i pierzga,,"Gramatura","200 g"
+ID,Type,SKU,Name,Published,Is featured?,Visibility in catalog,Short description,Description,In stock?,Regular price,Categories,Images,Parent,Position,Attribute 1 name,Attribute 1 value(s),Attribute 1 visible,Attribute 1 global
+,variable,MW-WIELOKWIATOWY,Miód wielokwiatowy,1,0,visible,"Łagodny, kwiatowy miód na co dzień — do herbaty, kanapek i wypieków.","Łagodny, kwiatowy miód na co dzień — do herbaty, kanapek i wypieków.",,,Miody klasyczne,,,,Gramatura,"400 g, 1100 g",1,0
+,variation,MW-WIELOKWIATOWY-400G,Miód wielokwiatowy - 400 g,1,0,visible,,,0,33,,,MW-WIELOKWIATOWY,0,Gramatura,400 g,1,0
+,variation,MW-WIELOKWIATOWY-1100G,Miód wielokwiatowy - 1100 g,1,0,visible,,,0,58,,,MW-WIELOKWIATOWY,1,Gramatura,1100 g,1,0
+,variable,MW-RZEPAKOWY,Miód rzepakowy,1,0,visible,"Jasny, delikatnie słodki miód, który po krystalizacji nabiera kremowej konsystencji.","Jasny, delikatnie słodki miód, który po krystalizacji nabiera kremowej konsystencji.",,,Miody klasyczne,,,,Gramatura,"400 g, 1100 g",1,0
+,variation,MW-RZEPAKOWY-400G,Miód rzepakowy - 400 g,1,0,visible,,,0,33,,,MW-RZEPAKOWY,0,Gramatura,400 g,1,0
+,variation,MW-RZEPAKOWY-1100G,Miód rzepakowy - 1100 g,1,0,visible,,,0,58,,,MW-RZEPAKOWY,1,Gramatura,1100 g,1,0
+,variable,MW-MNISZKOWY,Miód mniszkowy,1,0,visible,"Złoty miód o łagodnym, kwiatowym smaku — dobry do herbaty i deserów.","Złoty miód o łagodnym, kwiatowym smaku — dobry do herbaty i deserów.",,,Miody klasyczne,,,,Gramatura,"400 g, 1100 g",1,0
+,variation,MW-MNISZKOWY-400G,Miód mniszkowy - 400 g,1,0,visible,,,0,33,,,MW-MNISZKOWY,0,Gramatura,400 g,1,0
+,variation,MW-MNISZKOWY-1100G,Miód mniszkowy - 1100 g,1,0,visible,,,0,58,,,MW-MNISZKOWY,1,Gramatura,1100 g,1,0
+,variable,MW-NAWLOCIOWY,Miód nawłociowy,1,0,visible,"Jasny miód o delikatnym, kwiatowym aromacie późnego lata.","Jasny miód o delikatnym, kwiatowym aromacie późnego lata.",,,Miody klasyczne,,,,Gramatura,"400 g, 1100 g",1,0
+,variation,MW-NAWLOCIOWY-400G,Miód nawłociowy - 400 g,1,0,visible,,,0,33,,,MW-NAWLOCIOWY,0,Gramatura,400 g,1,0
+,variation,MW-NAWLOCIOWY-1100G,Miód nawłociowy - 1100 g,1,0,visible,,,0,58,,,MW-NAWLOCIOWY,1,Gramatura,1100 g,1,0
+,variable,MW-SLONECZNIKOWY,Miód słonecznikowy,1,0,visible,"Jasny miód o łagodnym smaku, który szybko krystalizuje się do gęstej konsystencji.","Jasny miód o łagodnym smaku, który szybko krystalizuje się do gęstej konsystencji.",,,Miody klasyczne,,,,Gramatura,"400 g, 1100 g",1,0
+,variation,MW-SLONECZNIKOWY-400G,Miód słonecznikowy - 400 g,1,0,visible,,,0,33,,,MW-SLONECZNIKOWY,0,Gramatura,400 g,1,0
+,variation,MW-SLONECZNIKOWY-1100G,Miód słonecznikowy - 1100 g,1,0,visible,,,0,58,,,MW-SLONECZNIKOWY,1,Gramatura,1100 g,1,0
+,variable,MW-LIPOWY,Miód lipowy,1,0,visible,"Aromatyczny miód o wyraźnym, kwiatowo-ziołowym charakterze.","Aromatyczny miód o wyraźnym, kwiatowo-ziołowym charakterze.",,,Miody klasyczne,,,,Gramatura,"400 g, 1100 g",1,0
+,variation,MW-LIPOWY-400G,Miód lipowy - 400 g,1,0,visible,,,0,33,,,MW-LIPOWY,0,Gramatura,400 g,1,0
+,variation,MW-LIPOWY-1100G,Miód lipowy - 1100 g,1,0,visible,,,0,63,,,MW-LIPOWY,1,Gramatura,1100 g,1,0
+,variable,MW-AKACJOWY,Miód akacjowy,1,0,visible,"Delikatny, jasny miód o łagodnym smaku i płynnej konsystencji.","Delikatny, jasny miód o łagodnym smaku i płynnej konsystencji.",,,Miody klasyczne,,,,Gramatura,"400 g, 1100 g",1,0
+,variation,MW-AKACJOWY-400G,Miód akacjowy - 400 g,1,0,visible,,,0,33,,,MW-AKACJOWY,0,Gramatura,400 g,1,0
+,variation,MW-AKACJOWY-1100G,Miód akacjowy - 1100 g,1,0,visible,,,0,63,,,MW-AKACJOWY,1,Gramatura,1100 g,1,0
+,variable,MW-GRYCZANY,Miód gryczany,1,0,visible,"Ciemny miód o wyrazistym, charakterystycznym smaku.","Ciemny miód o wyrazistym, charakterystycznym smaku.",,,Miody klasyczne,,,,Gramatura,"400 g, 1100 g",1,0
+,variation,MW-GRYCZANY-400G,Miód gryczany - 400 g,1,0,visible,,,0,33,,,MW-GRYCZANY,0,Gramatura,400 g,1,0
+,variation,MW-GRYCZANY-1100G,Miód gryczany - 1100 g,1,0,visible,,,0,65,,,MW-GRYCZANY,1,Gramatura,1100 g,1,0
+,variable,MW-SPADZIOWY,Miód spadziowy,1,0,visible,"Ciemny miód leśny o głębokim, żywicznym aromacie.","Ciemny miód leśny o głębokim, żywicznym aromacie.",,,Miody klasyczne,,,,Gramatura,"400 g, 1100 g",1,0
+,variation,MW-SPADZIOWY-400G,Miód spadziowy - 400 g,1,0,visible,,,0,33,,,MW-SPADZIOWY,0,Gramatura,400 g,1,0
+,variation,MW-SPADZIOWY-1100G,Miód spadziowy - 1100 g,1,0,visible,,,0,65,,,MW-SPADZIOWY,1,Gramatura,1100 g,1,0
+,variable,MW-NEKTAROWO-SPADZIOWY,Miód nektarowo-spadziowy,1,0,visible,"Połączenie nektaru kwiatowego i spadzi leśnej o złożonym, głębokim smaku.","Połączenie nektaru kwiatowego i spadzi leśnej o złożonym, głębokim smaku.",,,Miody klasyczne,,,,Gramatura,"400 g, 1100 g",1,0
+,variation,MW-NEKTAROWO-SPADZIOWY-400G,Miód nektarowo-spadziowy - 400 g,1,0,visible,,,0,33,,,MW-NEKTAROWO-SPADZIOWY,0,Gramatura,400 g,1,0
+,variation,MW-NEKTAROWO-SPADZIOWY-1100G,Miód nektarowo-spadziowy - 1100 g,1,0,visible,,,0,65,,,MW-NEKTAROWO-SPADZIOWY,1,Gramatura,1100 g,1,0
+,simple,MK-MALINA,Miód kremowany z maliną,1,0,visible,Kremowany miód z dodatkiem malin — owocowy akcent do kanapek i deserów.,Kremowany miód z dodatkiem malin — owocowy akcent do kanapek i deserów.,0,36,Kremowane,,,,Gramatura,400 g,1,0
+,simple,MK-CYTRYNA,Miód kremowany z cytryną,1,0,visible,Kremowany miód z cytryną — cytrusowa świeżość do herbaty i śniadania.,Kremowany miód z cytryną — cytrusowa świeżość do herbaty i śniadania.,0,36,Kremowane,,,,Gramatura,400 g,1,0
+,simple,MK-ROKITNIK,Miód kremowany z rokitnikiem,1,0,visible,"Kremowany miód z rokitnikiem o wyrazistym, owocowym charakterze.","Kremowany miód z rokitnikiem o wyrazistym, owocowym charakterze.",0,36,Kremowane,,,,Gramatura,400 g,1,0
+,simple,MK-TRUSKAWKA,Miód kremowany z truskawką,1,0,visible,"Kremowany miód z truskawką — słodki, owocowy dodatek do śniadania.","Kremowany miód z truskawką — słodki, owocowy dodatek do śniadania.",0,36,Kremowane,,,,Gramatura,400 g,1,0
+,simple,MK-ZURAWINA,Miód kremowany z żurawiną,1,0,visible,"Kremowany miód z żurawiną o lekko kwaskowym, owocowym smaku.","Kremowany miód z żurawiną o lekko kwaskowym, owocowym smaku.",0,36,Kremowane,,,,Gramatura,400 g,1,0
+,simple,MK-LIMONKA-MIETA,Miód kremowany z limonką i miętą,1,0,visible,Kremowany miód z limonką i miętą — orzeźwiający akcent do herbaty.,Kremowany miód z limonką i miętą — orzeźwiający akcent do herbaty.,0,36,Kremowane,,,,Gramatura,400 g,1,0
+,simple,MK-CZARNA-PORZECZKA,Miód kremowany z czarną porzeczką,1,0,visible,"Kremowany miód z czarną porzeczką o głębokim, owocowym smaku.","Kremowany miód z czarną porzeczką o głębokim, owocowym smaku.",0,36,Kremowane,,,,Gramatura,400 g,1,0
+,simple,MK-CZERWONA-PORZECZKA,Miód kremowany z czerwoną porzeczką,1,0,visible,Kremowany miód z czerwoną porzeczką — lekko kwaskowy i owocowy.,Kremowany miód z czerwoną porzeczką — lekko kwaskowy i owocowy.,0,36,Kremowane,,,,Gramatura,400 g,1,0
+,simple,MK-PYLEK,Miód kremowany z pyłkiem pszczelim,1,0,visible,Kremowany miód z pyłkiem pszczelim — naturalny dodatek do codziennych porcji.,Kremowany miód z pyłkiem pszczelim — naturalny dodatek do codziennych porcji.,0,36,Kremowane,,,,Gramatura,400 g,1,0
+,variable,PP-PYLEK,Pyłek pszczeli,1,0,visible,"Naturalny pyłek pszczeli w słoiku — dodatek do jogurtów, koktajli i owsianki.","Naturalny pyłek pszczeli w słoiku — dodatek do jogurtów, koktajli i owsianki.",,,Pyłek i pierzga,,,,Gramatura,"200 g, 500 g",1,0
+,variation,PP-PYLEK-200G,Pyłek pszczeli - 200 g,1,0,visible,,,0,30,,,PP-PYLEK,0,Gramatura,200 g,1,0
+,variation,PP-PYLEK-500G,Pyłek pszczeli - 500 g,1,0,visible,,,0,55,,,PP-PYLEK,1,Gramatura,500 g,1,0
+,simple,PZ-PIERZGA,Pierzga,1,0,visible,Pierzga pszczela — naturalny produkt pasieczny w słoiku.,Pierzga pszczela — naturalny produkt pasieczny w słoiku.,0,80,Pyłek i pierzga,,,,Gramatura,200 g,1,0
