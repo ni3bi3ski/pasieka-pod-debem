@@ -1,0 +1,14 @@
+/* FAQ — osobna sekcja */
+.faq-section{padding:56px 0 72px;border-top:1px solid var(--line);background:var(--white)}
+.faq-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:72px;align-items:start}
+.faq-intro h2{font-size:clamp(31px,3.3vw,43px);margin-bottom:16px}
+.faq-intro p{font-size:14px;line-height:1.75;color:var(--muted);max-width:38ch}
+.faq-intro a{color:inherit}
+.faq-list details{margin:0;padding:0;border-bottom:1px solid var(--line)}
+.faq-list details:first-child{border-top:1px solid var(--line)}
+.faq-list summary{min-height:56px;padding:16px 0;font-size:16px;font-weight:500}
+.faq-list summary:focus-visible{outline-offset:2px}
+.faq-list details[open] summary{color:var(--green)}
+.faq-list details p{padding:0 0 18px;font-size:15px;line-height:1.75;color:var(--muted);max-width:62ch}
+@media(max-width:900px){.faq-section{padding:36px 0 48px}.faq-layout{grid-template-columns:1fr;gap:24px}}
+@media(min-width:1440px){.faq-section{padding:88px 0 104px}.faq-layout{gap:110px}}
