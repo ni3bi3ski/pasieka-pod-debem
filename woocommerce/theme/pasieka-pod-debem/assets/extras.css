@@ -1,0 +1,18 @@
+/* Pasieka Pod Dębem — sekcje dodatkowe, karty produktów 3:4 i szeroki układ. */
+.why-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.why-card{padding:28px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
+.why-card h3{font-size:24px;margin-bottom:12px}
+.why-card p{color:var(--muted);font-size:14px}
+.pickup-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.pickup-info p{color:var(--muted);font-size:15px;overflow-wrap:anywhere}
+.pickup-info .btn{margin-top:8px}
+.pickup-map{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;min-height:320px;background:#eee9d9}
+.pickup-map iframe{display:block;width:100%;height:100%;min-height:320px;border:0}
+.map-consent{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:16px;min-height:320px;padding:32px}
+.map-consent p{margin:0;font-size:14px;color:var(--muted);max-width:44ch}
+.woocommerce ul.products li.product a img{aspect-ratio:3/4;object-fit:cover}
+.woocommerce ul.products li.product a img[src$=".svg"]{object-fit:contain}
+@media(min-width:1440px){.wrap{width:min(1600px,calc(100% - 96px))}.section{padding:110px 0}.hero{gap:90px}.lead{font-size:20px}.product-grid,.woocommerce ul.products{gap:30px}.why-grid{gap:30px}.pickup-grid{gap:64px}}
+@media(min-width:1920px){.wrap{width:min(1760px,calc(100% - 128px))}.hero{gap:110px}.why-grid{gap:36px}.pickup-grid{gap:80px}}
+@media(max-width:1050px){.why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pickup-grid{gap:32px}}
+@media(max-width:760px){.why-grid,.pickup-grid{grid-template-columns:1fr}.why-card{padding:22px}.map-consent{padding:24px}}
