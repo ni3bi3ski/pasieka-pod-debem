@@ -1,0 +1,70 @@
+name: Deploy preview to jarekzurawski.pl
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'woocommerce/preview/**'
+      - 'www/DSC*.jpg'
+      - 'Pasieka/**'
+      - 'favicon.svg'
+      - '.github/workflows/deploy-preview.yml'
+
+concurrency:
+  group: deploy-preview
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check deploy settings
+        id: check
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_DIR: ${{ secrets.FTP_DIR }}
+        run: |
+          if [ -z "$FTP_HOST" ] || [ -z "$FTP_USER" ] || [ -z "$FTP_PASSWORD" ] || [ -z "$FTP_DIR" ]; then
+            echo "Brak sekretow FTP_HOST, FTP_USER, FTP_PASSWORD lub FTP_DIR - wdrozenie pominiete."
+            exit 0
+          fi
+          case "$FTP_DIR" in
+            */pasieka-pod-debem/|pasieka-pod-debem/)
+              echo "ready=true" >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo "FTP_DIR musi konczyc sie na pasieka-pod-debem/ (ochrona przed nadpisaniem strony glownej)."
+              exit 1
+              ;;
+          esac
+
+      - name: Get latest code
+        if: steps.check.outputs.ready == 'true'
+        uses: actions/checkout@v4
+
+      - name: Prepare files
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          mkdir -p _site/woocommerce _site/www "_site/Pasieka/Sam logotyp"
+          cp -r woocommerce/preview _site/woocommerce/preview
+          cp www/DSC*.jpg _site/www/
+          cp "Pasieka/Sam logotyp/Sam logotyp.svg" "_site/Pasieka/Sam logotyp/"
+          cp "Pasieka/Miód cennik 2026.pdf" _site/Pasieka/
+          cp favicon.svg _site/favicon.svg
+
+      - name: Upload via FTP
+        if: steps.check.outputs.ready == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ${{ secrets.FTP_PROTOCOL || 'ftps' }}
+          local-dir: ./_site/
+          server-dir: ${{ secrets.FTP_DIR }}
