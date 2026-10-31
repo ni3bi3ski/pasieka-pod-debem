@@ -62,7 +62,7 @@ $honey_image = ($honey_slug === 'pierzga') ? 'stempel.svg' : 'bee.svg';
 $phone=ppd_setting('phone'); $email=ppd_setting('email'); $address=ppd_setting('address','Kiczyce, gmina Skoczów');
 if ($phone): ?><a href="tel:<?php echo esc_attr(preg_replace('/[^+0-9]/','',$phone)); ?>"><?php echo esc_html($phone); ?></a><?php endif;
 if ($email): ?><a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a><?php endif; ?>
-<p class="contact-meta"><?php echo nl2br(esc_html($address)); ?></p><a class="contact-meta" rel="noopener noreferrer" target="_blank" href="<?php echo esc_url('https://www.google.com/maps/search/?api=1&query='.rawurlencode($address)); ?>">Otwórz mapę ↗</a>
+<p class="contact-meta"><?php echo nl2br(esc_html($address)); ?></p><a class="contact-meta" rel="noopener noreferrer" target="_blank" href="<?php echo esc_url('https://www.google.com/maps/search/?api=1&query='.rawurlencode($address)); ?>">Otwórz mapę ↗</a><a class="contact-meta" href="<?php echo esc_url(home_url('/dane-firmy/')); ?>">Dane firmy ↗</a>
 <?php else: ?><p class="contact-meta">Dane kontaktowe zostaną opublikowane po potwierdzeniu przez pasiekę.</p><?php endif; ?>
 <?php $has_social=array_filter($social_links); if ($has_social): ?><div class="social-links"><?php foreach ($social_links as $social_name => $social_url): if ($social_url): ?><a href="<?php echo esc_url($social_url); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html($social_name); ?> ↗</a><?php endif; endforeach; ?></div><?php endif; ?>
 </div></div></section></main><?php get_footer(); ?>
