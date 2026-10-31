@@ -1,4 +1,14 @@
 <?php if (!defined('ABSPATH')) { exit; } get_header(); ?>
+<style>
+@media(min-width:1100px){.product-grid{grid-template-columns:repeat(5,1fr)!important}}
+@media(min-width:860px) and (max-width:1099px){.product-grid{grid-template-columns:repeat(4,1fr)!important}}
+@media(min-width:560px) and (max-width:859px){.product-grid{grid-template-columns:repeat(3,1fr)!important}}
+.honey-card{padding:var(--s4,1rem)!important}
+.honey-card .sample-image{aspect-ratio:auto!important;min-height:0!important}
+.honey-card .sample-image img{width:auto!important;max-width:100%!important;max-height:150px!important;margin:0 auto!important;object-fit:contain!important}
+.honey-card h3{font-size:1.05rem!important;line-height:1.2!important}
+.honey-card p{font-size:.85rem!important}
+</style>
 <main id="main"><div class="wrap hero"><div><span class="eyebrow">Z Kiczyc. Na Twój stół.</span><h1><?php echo esc_html(ppd_setting('hero_title','Miód. Mały słoik, wielka przyjemność.')); ?></h1><p class="lead"><?php echo esc_html(ppd_setting('hero_text','Pasieka Pod Dębem w Kiczycach. Poznaj naszą ofertę i wybierz miód do swojego stołu.')); ?></p><div class="actions"><a class="btn" href="#oferta">Poznaj nasze miody ↗</a><a class="btn secondary" href="#o-pasiece">Poznaj pasiekę</a></div><p class="small-note">Pasieka Pod Dębem · Kiczyce, gmina Skoczów</p></div><div class="hero-art">
 <?php $hero=absint(ppd_setting('hero_image',0)); if ($hero) { echo wp_get_attachment_image($hero,'large',false,array('loading'=>'eager','fetchpriority'=>'high')); } else { ?><img class="illustration" src="<?php echo esc_url(get_template_directory_uri().'/assets/jar.svg'); ?>" alt="Autorska ilustracja słoika — nie zdjęcie produktu" width="600" height="660" fetchpriority="high"><?php } ?>
 <div class="art-tag"><span>Pasieka Pod Dębem</span><span>Kiczyce · Polska</span></div></div></div>
