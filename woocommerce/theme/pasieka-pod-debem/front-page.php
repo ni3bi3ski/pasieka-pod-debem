@@ -18,9 +18,11 @@ $honey_links = array(
  'Miód kremowany z pyłkiem pszczelim' => 'miod-kremowany-z-pylkiem-pszczelim',
  'Pierzga' => 'pierzga',
 );
-foreach ($honey_links as $honey_name => $honey_slug): ?>
+foreach ($honey_links as $honey_name => $honey_slug):
+$honey_image = ($honey_slug === 'pierzga') ? 'stempel.svg' : 'bee.svg';
+?>
 <a class="sample-card honey-card" href="<?php echo esc_url(home_url('/product/' . $honey_slug . '/')); ?>">
- <div class="sample-image"><img src="<?php echo esc_url(get_template_directory_uri().'/assets/jar.svg'); ?>" alt="" width="600" height="660" loading="lazy"></div>
+ <div class="sample-image"><img src="<?php echo esc_url(get_template_directory_uri().'/assets/'.$honey_image); ?>" alt="<?php echo esc_attr($honey_name); ?>" width="600" height="660" loading="lazy"></div>
  <h3><?php echo esc_html($honey_name); ?></h3>
  <p>Zobacz produkt</p>
 </a>
