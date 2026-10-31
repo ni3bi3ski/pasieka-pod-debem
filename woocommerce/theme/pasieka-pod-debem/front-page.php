@@ -41,7 +41,7 @@ $social_links = array(
 <?php $hero=absint(ppd_setting('hero_image',0)); if ($hero) { echo wp_get_attachment_image($hero,'large',false,array('loading'=>'eager','fetchpriority'=>'high')); } else { ?><img class="illustration" src="<?php echo esc_url(get_template_directory_uri().'/assets/jar.svg'); ?>" alt="Autorska ilustracja słoika — nie zdjęcie produktu" width="600" height="660" fetchpriority="high"><?php } ?>
 <div class="art-tag"><span>Pasieka Pod Dębem</span><span>Kiczyce · Polska</span></div></div></div>
 <div class="feature-strip"><div class="wrap features"><div class="feature">01 / Wybierz swój smak<span>Poznaj dostępne rodzaje miodu.</span></div><div class="feature">02 / Poznaj pasiekę<span>Jesteśmy w Kiczycach, koło Skoczowa.</span></div><div class="feature">03 / Porozmawiajmy<span>Zapytaj nas o aktualną ofertę.</span></div></div></div>
-<section class="section wrap" id="oferta"><div class="section-head"><div><span class="eyebrow">Co zamkniemy w Twoim słoiku?</span><h2>Wybierz miód.</h2></div><p>Wybierz kategorię, gramaturę i dodaj produkt do koszyka.</p></div>
+<section class="section wrap" id="oferta"><div class="section-head"><div><span class="eyebrow">Co zamkniemy w Twoim słoiku?</span><h2>Wybierz miód.</h2></div><p>Wybierz gramaturę i dodaj produkt do koszyka.</p></div>
 <div class="category-filter" id="category-filter">
  <button type="button" class="is-active" data-filter="all">Wszystkie</button>
  <button type="button" data-filter="miody-klasyczne">Miody klasyczne</button>
@@ -100,11 +100,11 @@ foreach ($homepage_products as $product):
   <input type="hidden" name="add-to-cart" value="<?php echo esc_attr($product_id); ?>">
   <input type="hidden" name="variation_id" value="<?php echo esc_attr($first['id']); ?>">
   <input type="hidden" name="quantity" value="1">
-  <label class="screen-reader-text" for="gramatura-<?php echo esc_attr($product_id); ?>">Gramatura</label>
+  <label class="screen-reader-text" for="gramatura-<?php echo esc_attr($product_id); ?>">Gramatura i cena</label>
   <div class="gramatura-field">
    <select id="gramatura-<?php echo esc_attr($product_id); ?>" class="gramatura-select" name="attribute_gramatura">
 <?php foreach ($variations as $variation) : ?>
-    <option value="<?php echo esc_attr($variation['label']); ?>" data-variation-id="<?php echo esc_attr($variation['id']); ?>" data-price="<?php echo esc_attr($variation['price']); ?>"><?php echo esc_html($variation['label']); ?></option>
+    <option value="<?php echo esc_attr($variation['label']); ?>" data-variation-id="<?php echo esc_attr($variation['id']); ?>" data-price="<?php echo esc_attr($variation['price']); ?>"><?php echo esc_html($variation['label']); ?> — <?php echo esc_html(wp_strip_all_tags(wc_price($variation['price']))); ?></option>
 <?php endforeach; ?>
    </select>
   </div>
