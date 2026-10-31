@@ -1,8 +1,9 @@
 <?php if (!defined('ABSPATH')) { exit; } get_header(); ?>
 <style>
-@media(min-width:1100px){.product-grid{grid-template-columns:repeat(5,1fr)!important}}
-@media(min-width:860px) and (max-width:1099px){.product-grid{grid-template-columns:repeat(4,1fr)!important}}
-@media(min-width:560px) and (max-width:859px){.product-grid{grid-template-columns:repeat(3,1fr)!important}}
+@media(min-width:1200px){.product-grid{grid-template-columns:repeat(6,1fr)!important;gap:18px!important}.honey-card h3{font-size:1.1rem!important}.honey-card .card-price{font-size:1rem!important}.honey-card .sample-image{border-radius:20px;margin-bottom:14px}.honey-form{gap:8px}.honey-form select{min-height:46px;font-size:.82rem;padding:0 38px 0 15px}.honey-form .btn{min-height:46px;font-size:.82rem;padding:11px 18px}.gramatura-field:before{right:15px}}
+@media(min-width:900px) and (max-width:1199px){.product-grid{grid-template-columns:repeat(4,1fr)!important}}
+@media(min-width:640px) and (max-width:899px){.product-grid{grid-template-columns:repeat(3,1fr)!important}}
+@media(max-width:639px){.product-grid{grid-template-columns:repeat(2,1fr)!important}}
 .honey-card{padding:0!important;display:flex;flex-direction:column}
 .honey-card .sample-image{aspect-ratio:4/5!important;min-height:0!important;overflow:hidden;border-radius:26px;margin-bottom:18px;background:linear-gradient(160deg,#f4eeda,#e9edda)}
 .honey-card .sample-image img{width:100%!important;height:100%!important;max-height:none!important;aspect-ratio:4/5!important;object-fit:cover!important;padding:0!important;margin:0!important;transition:transform .5s ease}
