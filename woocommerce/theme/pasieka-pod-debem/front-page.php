@@ -3,11 +3,30 @@
 <?php $hero=absint(ppd_setting('hero_image',0)); if ($hero) { echo wp_get_attachment_image($hero,'large',false,array('loading'=>'eager','fetchpriority'=>'high')); } else { ?><img class="illustration" src="<?php echo esc_url(get_template_directory_uri().'/assets/jar.svg'); ?>" alt="Autorska ilustracja słoika — nie zdjęcie produktu" width="600" height="660" fetchpriority="high"><?php } ?>
 <div class="art-tag"><span>Pasieka Pod Dębem</span><span>Kiczyce · Polska</span></div></div></div>
 <div class="feature-strip"><div class="wrap features"><div class="feature">01 / Wybierz swój smak<span>Poznaj dostępne rodzaje miodu.</span></div><div class="feature">02 / Poznaj pasiekę<span>Jesteśmy w Kiczycach, koło Skoczowa.</span></div><div class="feature">03 / Porozmawiajmy<span>Zapytaj nas o aktualną ofertę.</span></div></div></div>
-<section class="section wrap" id="oferta"><div class="section-head"><div><span class="eyebrow">Co zamkniemy w Twoim słoiku?</span><h2>Znajdź swój ulubiony.</h2></div><p>Oferta i dostępność produktów są aktualizowane w sklepie.</p></div>
-<?php $has_products=function_exists('wc_get_products') && count(wc_get_products(array('status'=>'publish','visibility'=>'catalog','limit'=>1,'return'=>'ids')))>0;
-if ($has_products) { echo do_shortcode('[products limit="8" columns="4" orderby="menu_order" order="ASC" visibility="catalog"]'); ?><div class="actions"><a class="btn secondary" href="<?php echo esc_url(ppd_shop_url()); ?>">Zobacz całą ofertę</a></div><?php } else { ?>
-<p class="notice">Przygotowujemy ofertę sklepu. Poniższe karty przedstawiają planowany katalog — produkty, gramatury, ceny i dostępność wymagają potwierdzenia.</p><div class="product-grid">
-<?php foreach (array('wielokwiatowy','lipowy','rzepakowy','spadziowy') as $name): ?><article class="sample-card"><div class="sample-image"><img src="<?php echo esc_url(get_template_directory_uri().'/assets/jar.svg'); ?>" alt="Ilustracja słoika, nie zdjęcie produktu" width="600" height="660" loading="lazy"></div><h3><?php echo esc_html('Miód '.$name); ?></h3><p>Planowana oferta</p><p class="sample-status">Sprzedaż jeszcze niedostępna</p></article><?php endforeach; ?></div><?php } ?>
+<section class="section wrap" id="oferta"><div class="section-head"><div><span class="eyebrow">Co zamkniemy w Twoim słoiku?</span><h2>Wybierz miód.</h2></div><p>Kliknij produkt, aby zobaczyć szczegóły i dodać go do koszyka.</p></div>
+<div class="product-grid">
+<?php
+$honey_links = array(
+ 'Miód kremowany z maliną' => 'miod-kremowany-z-malina',
+ 'Miód kremowany z cytryną' => 'miod-kremowany-z-cytryna',
+ 'Miód kremowany z rokitnikiem' => 'miod-kremowany-z-rokitnikiem',
+ 'Miód kremowany z truskawką' => 'miod-kremowany-z-truskawka',
+ 'Miód kremowany z żurawiną' => 'miod-kremowany-z-zurawina',
+ 'Miód kremowany z czarną porzeczką' => 'miod-kremowany-z-czarna-porzeczka',
+ 'Miód kremowany z czerwoną porzeczką' => 'miod-kremowany-z-czerwona-porzeczka',
+ 'Miód kremowany z limonką i miętą' => 'miod-kremowany-z-limonka-i-mieta',
+ 'Miód kremowany z pyłkiem pszczelim' => 'miod-kremowany-z-pylkiem-pszczelim',
+ 'Pierzga' => 'pierzga',
+);
+foreach ($honey_links as $honey_name => $honey_slug): ?>
+<a class="sample-card honey-card" href="<?php echo esc_url(home_url('/product/' . $honey_slug . '/')); ?>">
+ <div class="sample-image"><img src="<?php echo esc_url(get_template_directory_uri().'/assets/jar.svg'); ?>" alt="" width="600" height="660" loading="lazy"></div>
+ <h3><?php echo esc_html($honey_name); ?></h3>
+ <p>Zobacz produkt</p>
+</a>
+<?php endforeach; ?>
+</div>
+<div class="actions"><a class="btn secondary" href="<?php echo esc_url(function_exists('ppd_shop_url') ? ppd_shop_url() : home_url('/shop/')); ?>">Zobacz całą ofertę</a></div>
 </section>
 <section class="section wrap" id="dlaczego"><div class="section-head"><div><span class="eyebrow">Dlaczego warto</span><h2>Miód z lokalnej pasieki.</h2></div><p>Bezpośredni kontakt, sezonowa oferta i produkty z Kiczyc.</p></div><div class="why-grid"><div class="why-card"><h3>Lokalnie z Kiczyc</h3><p>Pasieka działa w Kiczycach, w gminie Skoczów, na Śląsku Cieszyńskim.</p></div><div class="why-card"><h3>Sezonowość</h3><p>Rodzaje miodu zależą od pory roku i kwitnienia roślin. Dlatego dostępność poszczególnych produktów może się zmieniać.</p></div><div class="why-card"><h3>Bezpośredni kontakt</h3><p>Masz pytanie o produkt lub dostępność? Skontaktuj się z nami przed zakupem.</p></div></div></section>
 <section id="o-pasiece" class="wrap"><div class="story-panel"><div><span class="eyebrow">Pasieka Pod Dębem</span><h2>Dobre rzeczy zaczynają się blisko.</h2><img class="oak-art" src="<?php echo esc_url(get_template_directory_uri().'/assets/oak.svg'); ?>" alt="" width="240" height="240" loading="lazy"></div><div><p><?php echo nl2br(esc_html(ppd_setting('story',ppd_default_story()))); ?></p><p>Masz pytania? Zacznijmy od rozmowy.</p><div class="actions"><a class="btn" href="#kontakt">Skontaktuj się z nami ↗</a></div></div></div></section>
