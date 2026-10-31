@@ -12,9 +12,13 @@
 .honey-card p{font-size:.85rem!important}
 .honey-card .card-price{font:600 1.1rem/1.2 var(--sans);color:#8e561a;margin:0 0 14px!important}
 .honey-form{margin-top:auto;display:flex;flex-direction:column;gap:10px}
-.honey-form select{width:100%;min-height:48px;padding:12px 14px;border:1px solid #d5d9c8;border-radius:100px;background:var(--white);color:var(--ink);font-size:.92rem;transition:border-color .2s ease,box-shadow .2s ease}
+.gramatura-field{position:relative;display:flex}
+.gramatura-field:before{content:'';position:absolute;right:20px;top:50%;width:9px;height:9px;border-right:1.6px solid var(--forest);border-bottom:1.6px solid var(--forest);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.honey-form select{appearance:none;-webkit-appearance:none;-moz-appearance:none;width:100%;min-height:50px;padding:0 46px 0 18px;border:1px solid #d5d9c8;border-radius:100px;background:var(--white);color:var(--ink);font:600 .92rem/1.2 var(--sans);letter-spacing:.01em;cursor:pointer;transition:border-color .2s ease,box-shadow .2s ease,background-color .2s ease}
+.honey-form select:hover{border-color:#b9c0a8}
 .honey-form select:focus{border-color:var(--forest);box-shadow:0 0 0 3px rgba(32,62,45,.10);outline:none}
-.qty-stepper{display:flex;align-items:center;justify-content:space-between;border:1px solid #d5d9c8;border-radius:100px;background:var(--white);padding:4px}
+.honey-form select:disabled{opacity:.55;cursor:not-allowed}
+.qty-stepper{display:flex;align-items:center;justify-content:space-between;border:1px solid #d5d9c8;border-radius:100px;background:var(--white);padding:4px;min-height:50px}
 .qty-stepper button{width:42px;height:42px;border:0;border-radius:50%;background:#f2f0e3;color:var(--forest);font-size:20px;line-height:1;display:grid;place-items:center;transition:background-color .18s ease,color .18s ease}
 .qty-stepper button:hover{background:var(--forest);color:#fffdf5}
 .qty-stepper input[type=number]{width:56px;border:0;background:transparent;text-align:center;font:600 1rem var(--sans);color:var(--ink);min-height:42px;-moz-appearance:textfield}
@@ -30,6 +34,7 @@
 .social-links{display:flex;gap:var(--s3,.75rem);flex-wrap:wrap;margin-top:var(--s4,1rem)}
 .social-links a{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1rem;border:1px solid rgba(255,255,255,.25);border-radius:.5rem;color:inherit;text-decoration:none}
 .social-links a:hover{border-color:currentColor}
+@media(max-width:560px){.honey-form select{font-size:.88rem;padding-right:42px}.gramatura-field:before{right:17px}}
 </style>
 <?php
 $social_links = array(
@@ -101,11 +106,13 @@ foreach ($homepage_products as $product):
   <input type="hidden" name="add-to-cart" value="<?php echo esc_attr($product_id); ?>">
   <input type="hidden" name="variation_id" value="<?php echo esc_attr($first['id']); ?>">
   <label class="screen-reader-text" for="gramatura-<?php echo esc_attr($product_id); ?>">Gramatura</label>
-  <select id="gramatura-<?php echo esc_attr($product_id); ?>" class="gramatura-select" name="attribute_gramatura">
+  <div class="gramatura-field">
+   <select id="gramatura-<?php echo esc_attr($product_id); ?>" class="gramatura-select" name="attribute_gramatura">
 <?php foreach ($variations as $variation) : ?>
-   <option value="<?php echo esc_attr($variation['label']); ?>" data-variation-id="<?php echo esc_attr($variation['id']); ?>" data-price="<?php echo esc_attr($variation['price']); ?>"><?php echo esc_html($variation['label']); ?> — <?php echo esc_html(wp_strip_all_tags(wc_price($variation['price']))); ?></option>
+    <option value="<?php echo esc_attr($variation['label']); ?>" data-variation-id="<?php echo esc_attr($variation['id']); ?>" data-price="<?php echo esc_attr($variation['price']); ?>"><?php echo esc_html($variation['label']); ?> — <?php echo esc_html(wp_strip_all_tags(wc_price($variation['price']))); ?></option>
 <?php endforeach; ?>
-  </select>
+   </select>
+  </div>
   <div class="qty-stepper">
    <button type="button" class="qty-btn" data-step="-1" aria-label="Zmniejsz ilość">−</button>
    <label class="screen-reader-text" for="qty-<?php echo esc_attr($product_id); ?>">Ilość</label>
