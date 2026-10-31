@@ -1,6 +1,6 @@
 <?php if (!defined('ABSPATH')) { exit; } get_header(); ?>
 <style>
-@media(min-width:1200px){.product-grid{grid-template-columns:repeat(6,1fr)!important;gap:18px!important}.honey-card h3{font-size:1.1rem!important}.honey-card .card-price{font-size:1rem!important}.honey-card .sample-image{border-radius:20px;margin-bottom:14px}.honey-form{gap:8px}.honey-form select{min-height:46px;font-size:.82rem;padding:0 38px 0 15px}.honey-form .btn{min-height:46px;font-size:.82rem;padding:11px 18px}.gramatura-field:before{right:15px}}
+@media(min-width:1200px){.product-grid{grid-template-columns:repeat(6,1fr)!important;gap:18px!important}.honey-card h3{font-size:1.1rem!important}.honey-card .sample-image{border-radius:20px;margin-bottom:14px}.honey-form{gap:8px}.honey-form select{min-height:46px;font-size:.82rem;padding:0 38px 0 15px}.honey-form .btn{min-height:46px;font-size:.82rem;padding:11px 18px}.gramatura-field:before{right:15px}}
 @media(min-width:900px) and (max-width:1199px){.product-grid{grid-template-columns:repeat(4,1fr)!important}}
 @media(min-width:640px) and (max-width:899px){.product-grid{grid-template-columns:repeat(3,1fr)!important}}
 @media(max-width:639px){.product-grid{grid-template-columns:repeat(2,1fr)!important}}
@@ -11,7 +11,6 @@
 .honey-card h3{font-size:1.35rem!important;line-height:1.2!important;margin:0 0 8px!important}
 .honey-card h3 a{text-decoration:none}
 .honey-card p{font-size:.85rem!important}
-.honey-card .card-price{font:600 1.1rem/1.2 var(--sans);color:#8e561a;margin:0 0 14px!important}
 .honey-form{margin-top:auto;display:flex;flex-direction:column;gap:10px}
 .gramatura-field{position:relative;display:flex}
 .gramatura-field:before{content:'';position:absolute;right:18px;top:50%;width:8px;height:8px;border-right:1.6px solid var(--forest);border-bottom:1.6px solid var(--forest);transform:translateY(-70%) rotate(45deg);pointer-events:none}
@@ -97,7 +96,6 @@ foreach ($homepage_products as $product):
  <h3><a href="<?php echo esc_url($product_link); ?>"><?php echo esc_html($product_name); ?></a></h3>
 
 <?php if ($is_variable) : $first = $variations[0]; ?>
- <p class="card-price" data-price-for="product-<?php echo esc_attr($product_id); ?>"><?php echo wp_kses_post(wc_price($first['price'])); ?></p>
  <form class="honey-form" method="post" action="<?php echo esc_url(home_url('/')); ?>">
   <input type="hidden" name="add-to-cart" value="<?php echo esc_attr($product_id); ?>">
   <input type="hidden" name="variation_id" value="<?php echo esc_attr($first['id']); ?>">
@@ -106,14 +104,13 @@ foreach ($homepage_products as $product):
   <div class="gramatura-field">
    <select id="gramatura-<?php echo esc_attr($product_id); ?>" class="gramatura-select" name="attribute_gramatura">
 <?php foreach ($variations as $variation) : ?>
-    <option value="<?php echo esc_attr($variation['label']); ?>" data-variation-id="<?php echo esc_attr($variation['id']); ?>" data-price="<?php echo esc_attr($variation['price']); ?>"><?php echo esc_html($variation['label']); ?> — <?php echo esc_html(wp_strip_all_tags(wc_price($variation['price']))); ?></option>
+    <option value="<?php echo esc_attr($variation['label']); ?>" data-variation-id="<?php echo esc_attr($variation['id']); ?>" data-price="<?php echo esc_attr($variation['price']); ?>"><?php echo esc_html($variation['label']); ?></option>
 <?php endforeach; ?>
    </select>
   </div>
   <button type="submit" class="btn">Dodaj do koszyka</button>
  </form>
 <?php else : ?>
- <p class="card-price"><?php echo wp_kses_post($product->get_price_html()); ?></p>
  <form class="honey-form" method="post" action="<?php echo esc_url(home_url('/')); ?>">
   <input type="hidden" name="add-to-cart" value="<?php echo esc_attr($product_id); ?>">
   <input type="hidden" name="quantity" value="1">
@@ -133,11 +130,8 @@ document.addEventListener('change', function(event) {
  var form = select.closest('.honey-form');
  var option = select.options[select.selectedIndex];
  var variationId = option.getAttribute('data-variation-id');
- var price = option.getAttribute('data-price');
  var hiddenVariation = form.querySelector('input[name="variation_id"]');
  if (hiddenVariation && variationId) { hiddenVariation.value = variationId; }
- var priceElement = form.parentElement.querySelector('.card-price');
- if (priceElement && price) { priceElement.innerHTML = price; }
 });
 
 document.addEventListener('click', function(event) {
