@@ -12,19 +12,12 @@
 .honey-card p{font-size:.85rem!important}
 .honey-card .card-price{font:600 1.1rem/1.2 var(--sans);color:#8e561a;margin:0 0 14px!important}
 .honey-form{margin-top:auto;display:flex;flex-direction:column;gap:10px}
-.purchase-bar{display:grid;grid-template-columns:1fr auto;border:1px solid #d5d9c8;border-radius:100px;background:var(--white);overflow:hidden}
-.purchase-bar.single{grid-template-columns:1fr}
-.gramatura-field{position:relative;display:flex;min-width:0;border-right:1px solid #d5d9c8}
-.gramatura-field:before{content:'';position:absolute;right:16px;top:50%;width:8px;height:8px;border-right:1.6px solid var(--forest);border-bottom:1.6px solid var(--forest);transform:translateY(-70%) rotate(45deg);pointer-events:none}
-.honey-form select{appearance:none;-webkit-appearance:none;-moz-appearance:none;width:100%;min-height:50px;padding:0 40px 0 18px;border:0;border-radius:0;background:transparent;color:var(--ink);font:600 .9rem/1.2 var(--sans);letter-spacing:.01em;cursor:pointer;transition:background-color .2s ease}
-.honey-form select:hover{background:#f7f6ea}
-.honey-form select:focus{outline:none;box-shadow:inset 0 0 0 2px rgba(32,62,45,.14)}
+.gramatura-field{position:relative;display:flex}
+.gramatura-field:before{content:'';position:absolute;right:18px;top:50%;width:8px;height:8px;border-right:1.6px solid var(--forest);border-bottom:1.6px solid var(--forest);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.honey-form select{appearance:none;-webkit-appearance:none;-moz-appearance:none;width:100%;min-height:50px;padding:0 44px 0 18px;border:1px solid #d5d9c8;border-radius:100px;background:var(--white);color:var(--ink);font:600 .9rem/1.2 var(--sans);letter-spacing:.01em;cursor:pointer;transition:border-color .2s ease,box-shadow .2s ease,background-color .2s ease}
+.honey-form select:hover{border-color:#b9c0a8}
+.honey-form select:focus{border-color:var(--forest);box-shadow:0 0 0 3px rgba(32,62,45,.10);outline:none}
 .honey-form select:disabled{opacity:.55;cursor:not-allowed}
-.qty-stepper{display:flex;align-items:center;justify-content:space-between;background:transparent;border:0;border-radius:0;padding:4px;min-height:50px}
-.qty-stepper button{width:40px;height:40px;border:0;border-radius:50%;background:#f2f0e3;color:var(--forest);font-size:19px;line-height:1;display:grid;place-items:center;transition:background-color .18s ease,color .18s ease}
-.qty-stepper button:hover{background:var(--forest);color:#fffdf5}
-.qty-stepper input[type=number]{width:48px;border:0;background:transparent;text-align:center;font:600 .98rem var(--sans);color:var(--ink);min-height:40px;-moz-appearance:textfield}
-.qty-stepper input[type=number]::-webkit-outer-spin-button,.qty-stepper input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 .honey-form .btn{width:100%;margin-top:0;background:transparent;color:var(--forest);border:1px solid var(--forest)}
 .honey-form .btn:hover{background:var(--forest);color:#fffdf5}
 .category-filter{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
@@ -36,7 +29,7 @@
 .social-links{display:flex;gap:var(--s3,.75rem);flex-wrap:wrap;margin-top:var(--s4,1rem)}
 .social-links a{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1rem;border:1px solid rgba(255,255,255,.25);border-radius:.5rem;color:inherit;text-decoration:none}
 .social-links a:hover{border-color:currentColor}
-@media(max-width:560px){.purchase-bar{grid-template-columns:1fr;border-radius:22px}.purchase-bar .gramatura-field{border-right:0;border-bottom:1px solid #d5d9c8}.honey-form select{font-size:.86rem;padding-right:38px}.gramatura-field:before{right:15px}}
+@media(max-width:560px){.honey-form select{font-size:.86rem;padding-right:40px}.gramatura-field:before{right:16px}}
 </style>
 <?php
 $social_links = array(
@@ -107,21 +100,14 @@ foreach ($homepage_products as $product):
  <form class="honey-form" method="post" action="<?php echo esc_url(home_url('/')); ?>">
   <input type="hidden" name="add-to-cart" value="<?php echo esc_attr($product_id); ?>">
   <input type="hidden" name="variation_id" value="<?php echo esc_attr($first['id']); ?>">
-  <div class="purchase-bar">
-   <div class="gramatura-field">
-    <label class="screen-reader-text" for="gramatura-<?php echo esc_attr($product_id); ?>">Gramatura</label>
-    <select id="gramatura-<?php echo esc_attr($product_id); ?>" class="gramatura-select" name="attribute_gramatura">
+  <input type="hidden" name="quantity" value="1">
+  <label class="screen-reader-text" for="gramatura-<?php echo esc_attr($product_id); ?>">Gramatura</label>
+  <div class="gramatura-field">
+   <select id="gramatura-<?php echo esc_attr($product_id); ?>" class="gramatura-select" name="attribute_gramatura">
 <?php foreach ($variations as $variation) : ?>
-     <option value="<?php echo esc_attr($variation['label']); ?>" data-variation-id="<?php echo esc_attr($variation['id']); ?>" data-price="<?php echo esc_attr($variation['price']); ?>"><?php echo esc_html($variation['label']); ?> — <?php echo esc_html(wp_strip_all_tags(wc_price($variation['price']))); ?></option>
+    <option value="<?php echo esc_attr($variation['label']); ?>" data-variation-id="<?php echo esc_attr($variation['id']); ?>" data-price="<?php echo esc_attr($variation['price']); ?>"><?php echo esc_html($variation['label']); ?> — <?php echo esc_html(wp_strip_all_tags(wc_price($variation['price']))); ?></option>
 <?php endforeach; ?>
-    </select>
-   </div>
-   <div class="qty-stepper">
-    <button type="button" class="qty-btn" data-step="-1" aria-label="Zmniejsz ilość">−</button>
-    <label class="screen-reader-text" for="qty-<?php echo esc_attr($product_id); ?>">Ilość</label>
-    <input id="qty-<?php echo esc_attr($product_id); ?>" class="qty-input" type="number" name="quantity" value="1" min="1" max="20" step="1" inputmode="numeric">
-    <button type="button" class="qty-btn" data-step="1" aria-label="Zwiększ ilość">+</button>
-   </div>
+   </select>
   </div>
   <button type="submit" class="btn">Dodaj do koszyka</button>
  </form>
@@ -129,14 +115,7 @@ foreach ($homepage_products as $product):
  <p class="card-price"><?php echo wp_kses_post($product->get_price_html()); ?></p>
  <form class="honey-form" method="post" action="<?php echo esc_url(home_url('/')); ?>">
   <input type="hidden" name="add-to-cart" value="<?php echo esc_attr($product_id); ?>">
-  <div class="purchase-bar single">
-   <div class="qty-stepper">
-    <button type="button" class="qty-btn" data-step="-1" aria-label="Zmniejsz ilość">−</button>
-    <label class="screen-reader-text" for="qty-<?php echo esc_attr($product_id); ?>">Ilość</label>
-    <input id="qty-<?php echo esc_attr($product_id); ?>" class="qty-input" type="number" name="quantity" value="1" min="1" max="20" step="1" inputmode="numeric">
-    <button type="button" class="qty-btn" data-step="1" aria-label="Zwiększ ilość">+</button>
-   </div>
-  </div>
+  <input type="hidden" name="quantity" value="1">
   <button type="submit" class="btn">Dodaj do koszyka</button>
  </form>
 <?php endif; ?>
@@ -161,18 +140,6 @@ document.addEventListener('change', function(event) {
 });
 
 document.addEventListener('click', function(event) {
- var stepperButton = event.target.closest('.qty-btn');
- if (stepperButton) {
-  var stepper = stepperButton.closest('.qty-stepper');
-  var input = stepper.querySelector('.qty-input');
-  var step = parseInt(stepperButton.getAttribute('data-step'), 10);
-  var value = parseInt(input.value || '1', 10);
-  var min = parseInt(input.getAttribute('min') || '1', 10);
-  var max = parseInt(input.getAttribute('max') || '20', 10);
-  input.value = Math.min(max, Math.max(min, value + step));
-  return;
- }
-
  var button = event.target.closest('#category-filter button');
  if (!button) { return; }
  var filter = button.getAttribute('data-filter');
