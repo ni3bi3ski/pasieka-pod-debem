@@ -17,7 +17,7 @@ function ppd_asset_version($path) {
 function ppd_setting($name,$default='') { return get_theme_mod('ppd_'.$name,$default); }
 function ppd_shop_url() { return function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/#oferta'); }
 function ppd_default_story() {
-    return 'Pasieka Pod Dębem działa od 2012 roku w Kiczycach, w gminie Skoczów, na Śląsku Cieszyńskim. Rodzaje miodu zależą od sezonu i kwitnienia roślin, dlatego dostępność produktów może się zmieniać. Zajrzyj do oferty lub skontaktuj się z nami, aby porozmawiać o dostępnych produktach.';
+    return 'Pasieka Pod Dębem prowadzi pasiekę w Kiczycach, w gminie Skoczów, na Śląsku Cieszyńskim. Rodzaje miodu zależą od sezonu i kwitnienia roślin, dlatego dostępność produktów może się zmieniać. Zajrzyj do oferty lub skontaktuj się z nami, aby porozmawiać o dostępnych produktach.';
 }
 function ppd_map_query() {
     if (!ppd_setting('contact_confirmed',false)) { return ''; }
@@ -65,14 +65,11 @@ function ppd_footer_page($slug,$label) {
 }
 function ppd_faq_items() {
     return array(
-        array('Gdzie sprawdzę aktualną ofertę?','Aktualne produkty znajdziesz w zakładce „Miody”. Publikujemy tam ceny, gramatury i dostępność. Jeśli oferta jest w przygotowaniu, zakup nie jest jeszcze możliwy.'),
-        array('Jakie są sposoby dostawy?','Dostępne metody i koszt dostawy zobaczysz w koszyku po podaniu adresu. Jeśli dla Twojego adresu nie ma metody dostawy, skontaktuj się z nami przed zakupem.'),
-        array('Jak mogę zapłacić?','Aktualne metody płatności są wyświetlane podczas składania zamówienia. Dostępność BLIK-u lub płatności kartą zależy od uruchomionego operatora płatności.'),
-        array('Czy można odebrać zamówienie osobiście?','Odbiór jest możliwy, jeśli taka opcja pojawia się w koszyku. Termin i miejsce odbioru ustal z nami na podstawie danych podanych przy zamówieniu.'),
-        array('Jak przechowywać miód?','Przechowuj miód w szczelnie zamkniętym słoiku, w suchym miejscu, z dala od bezpośredniego światła. Nie przechowuj go w lodówce.'),
-        array('Dlaczego miód się krystalizuje?','Krystalizacja to naturalny proces, który zależy od rodzaju miodu i temperatury przechowywania. Nie oznacza, że produkt jest zepsuty.'),
-        array('Czy mogę zamówić miód na prezent?','Tak. W uwagach do zamówienia napisz, że produkt ma być prezentem — ustalimy szczegóły po złożeniu zamówienia.'),
-        array('Co jeśli produktu nie ma?','Informację o dostępności zobaczysz na stronie produktu. Jeśli produkt jest niedostępny, skontaktuj się z nami lub wybierz inny rodzaj miodu.')
+        array('Czy mogę odebrać zamówienie osobiście?','Tak, jeśli odbiór osobisty jest dostępny. Wybierz go jako metodę dostawy w koszyku, a potwierdzimy termin odbioru.'),
+        array('Czy wysyłacie miody?','Tak. Dostępne metody dostawy i koszt wysyłki zobaczysz w koszyku po dodaniu produktów.'),
+        array('Dlaczego niektórych miodów nie ma w ofercie?','Miody są produktami sezonowymi. Dostępność zależy od kwitnienia roślin i wielkości zbiorów.'),
+        array('Czym różni się miód kremowany od klasycznego?','Miód kremowany ma gładką, równomierną konsystencję. Miód klasyczny może naturalnie krystalizować.'),
+        array('Czy pyłek i pierzga są zawsze dostępne?','Nie zawsze. Ich dostępność zależy od sezonu i aktualnych zapasów pasieki.')
     );
 }
 function ppd_structured_data() {
@@ -85,7 +82,11 @@ function ppd_structured_data() {
         $email=(string) ppd_setting('email');
         if ($email!=='') { $business['email']=$email; }
         $address=trim((string) ppd_setting('address'));
-        if ($address!=='') { $business['address']=array('@type'=>'PostalAddress','streetAddress'=>$address,'addressCountry'=>'PL'); }
+        if ($address!=='') {
+            $postal=array('@type'=>'PostalAddress','addressCountry'=>'PL');
+            if (preg_match('/\d/',$address)) { $postal['streetAddress']=$address; } else { $postal['addressLocality']=$address; }
+            $business['address']=$postal;
+        }
         $graph[]=$business;
     }
     $questions=array();
