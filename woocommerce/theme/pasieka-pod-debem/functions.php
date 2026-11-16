@@ -65,8 +65,8 @@ function ppd_footer_page($slug,$label) {
 }
 function ppd_faq_items() {
     return array(
-        array('Czy mogę odebrać zamówienie osobiście?','Tak, jeśli odbiór osobisty jest dostępny. Wybierz go jako metodę dostawy w koszyku, a potwierdzimy termin odbioru.'),
-        array('Czy wysyłacie miody?','Tak. Dostępne metody dostawy i koszt wysyłki zobaczysz w koszyku po dodaniu produktów.'),
+        array('Czy mogę odebrać zamówienie osobiście?','Tak. Zamówienia realizujemy wyłącznie w formie odbioru osobistego w Kiczycach. Termin odbioru potwierdzimy po złożeniu zamówienia.'),
+        array('Czy wysyłacie miody?','Nie. Obecnie nie wysyłamy zamówień. Wszystkie zamówienia odbierasz osobiście w Kiczycach.'),
         array('Dlaczego niektórych miodów nie ma w ofercie?','Miody są produktami sezonowymi. Dostępność zależy od kwitnienia roślin i wielkości zbiorów.'),
         array('Czym różni się miód kremowany od klasycznego?','Miód kremowany ma gładką, równomierną konsystencję. Miód klasyczny może naturalnie krystalizować.'),
         array('Czy pyłek i pierzga są zawsze dostępne?','Nie zawsze. Ich dostępność zależy od sezonu i aktualnych zapasów pasieki.')
